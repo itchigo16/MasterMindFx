@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -23,12 +24,19 @@ import java.util.HashMap;
 public class MainControler {
 
 
+    int scoreJ1_int = 0;
+    int scoreRobot = 0;
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
     int[] code = new int[4];
 
     private boolean canClick = true;
 
     int[] secretCode = MasterMindAlgo.codeAleat();
+
+    @FXML
+    Label scoreJoueur;
+    @FXML
+    Label scoreBot;
     @FXML
     Button vert;
     @FXML
@@ -54,6 +62,12 @@ public class MainControler {
     private Scene scene;
     private Stage stage;
 
+    public void updateScore(int scoreJoueur, int scoreRobot) {
+        scoreJ1_int = scoreJoueur;
+        this.scoreRobot = scoreRobot;
+        this.scoreJoueur.setText(scoreJ1_int + "");
+        this.scoreBot.setText(scoreRobot + "");
+    }
 
     public void switchToBot(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindBot.fxml"));
@@ -64,6 +78,7 @@ public class MainControler {
         stage.setScene(scene);
         controler.setEnsembleCouleurs(this.ensembleCouleurs);
         controler.putFirstCode();
+        controler.updateScore(scoreJ1_int, scoreRobot);
         stage.show();
     }
 
@@ -165,8 +180,10 @@ public class MainControler {
                     System.out.println("gg");
                     canClick = false;
                     changerButton.setVisible(true);
+                    scoreRobot += 8 - activeRow/2 + 1;
                 } else if (activeRow > 1) activeRow -= 2; // MANCHE PAS FINIS
                 else { // LOSE SI MANCHE FINIS
+                    // TODO: 08/11/2022 FAIRE MALUS
                     changerButton.setVisible(true);
                     canClick = false;
                     System.out.println("BAD");

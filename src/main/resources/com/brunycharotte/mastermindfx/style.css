@@ -3,55 +3,80 @@
 	src : url(./fonts/arcade.ttf);
 }
 
+#logo {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+Pane {
+	-fx-background-color: #222831;
+}
+
+.bouton, .palette, .labelGauche, .labelManche, .labelScore, #plateauVbox {
+	-fx-background-color: #393E46;
+}
+
 .bouton {
-	-fx-background-color : grey;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 	-fx-background-radius : 20;
 	
 	-fx-font-family : "arcade";
-	-fx-text-fill : white;
+	-fx-text-fill : #EEEEEE;
 	-fx-font-size : 18;
 }
 
 .palette{
-	-fx-background-color : grey;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 	-fx-background-radius : 20;
 }
+
+
+
+/*.labelDroite {*/
+/*	-fx-background-color : #444444;*/
+/*	-fx-background-radius : 20;*/
+/*	*/
+/*	-fx-font-family : arcade;*/
+/*	-fx-text-fill : #EDEDED;*/
+/*	-fx-font-size : 18;*/
+/*}*/
 
 .labelDroite {
-	-fx-background-color : grey;
-	-fx-background-radius : 20;
-	
-	-fx-font-family : arcade;
-	-fx-text-fill : white;
-	-fx-font-size : 18;
+	-fx-text-fill : #EEEEEE;
 }
 
-.labelManche{
-	-fx-background-color : grey;
+.labelTitle {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-background-color: #393E46;
+	-fx-background-radius: 20;
+	-fx-text-fill: #FFD369;
+}
+
+.labelGauche, .labelManche{
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 	-fx-background-radius : 20;
-	
-	-fx-text-fill : white;
+
+	-fx-text-fill : #EEEEEE;
 	-fx-font-size : 20;
 }
 
-.labelGauche{
-	-fx-background-color : grey;
-	-fx-background-radius : 20;
-	
-	-fx-text-fill : white;
-	-fx-font-size : 28;
+Pane > .labelScore {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+Pane > .labelScore > .labelScore {
+	-fx-border-radius: 15;
+	-fx-border-width: 2;
+	-fx-font-size: 20px;
 }
 
-
 .labelScore {
+	-fx-background-radius: 20;
 	-fx-text- : "arcade";
-	-fx-text-fill : white;
+	-fx-text-fill : #EEEEEE;
 	-fx-font-size : 26;
 }
 
 .sliderBienPlaces{
-	-track-color : green;
-	-fx-text-fill : green;
+	-fx-control-inner-background : green;
 	
 }
 
@@ -63,13 +88,26 @@
 	-fx-background-color : white;
 	-fx-border-color : black;
 	
-	-fx-text-fill : black;
+	-fx-text-fill : #525252;
 	-fx-font-size : 32;
 	-fx-text-family : arcade;
 }
 
+
 .boutonMenu{
 	
+}
+
+#boutonEffacer {
+	-fx-text-fill: #EC625F;
+}
+
+#boutonValider {
+	-fx-text-fill: #588C73;
+}
+
+#boutonQuitter {
+	-fx-text-fill: #EC625F;
 }
 
 .labelMenu{

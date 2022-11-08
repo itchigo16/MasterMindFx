@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -54,8 +55,22 @@ public class BotControler {
     VBox plateau;
 
 
+    int scoreJ1_int = 0;
+    int scoreRobot = 0;
+
+    @FXML
+    Label scoreJoueur;
+    @FXML
+    Label scoreBot;
+
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
 
+    public void updateScore(int scoreJoueur, int scoreRobot) {
+        scoreJ1_int = scoreJoueur;
+        this.scoreRobot = scoreRobot;
+        this.scoreJoueur.setText(scoreJ1_int + "");
+        this.scoreBot.setText(scoreRobot + "");
+    }
     public void switchToBot(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
         root = fxmlLoader.load();
@@ -64,6 +79,7 @@ public class BotControler {
         scene = new Scene(root);
         stage.setScene(scene);
         controler.setEnsembleCouleurs(this.ensembleCouleurs);
+        controler.updateScore(scoreJ1_int, scoreRobot);
         stage.show();
     }
 
