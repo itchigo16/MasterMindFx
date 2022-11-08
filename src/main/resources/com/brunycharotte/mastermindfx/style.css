@@ -1,0 +1,77 @@
+@font-face {
+    font-family : 'arcade';
+	src : url(./fonts/arcade.ttf);
+}
+
+.bouton {
+	-fx-background-color : grey;
+	-fx-background-radius : 20;
+	
+	-fx-font-family : "arcade";
+	-fx-text-fill : white;
+	-fx-font-size : 18;
+}
+
+.palette{
+	-fx-background-color : grey;
+	-fx-background-radius : 20;
+}
+
+.labelDroite {
+	-fx-background-color : grey;
+	-fx-background-radius : 20;
+	
+	-fx-font-family : arcade;
+	-fx-text-fill : white;
+	-fx-font-size : 18;
+}
+
+.labelManche{
+	-fx-background-color : grey;
+	-fx-background-radius : 20;
+	
+	-fx-text-fill : white;
+	-fx-font-size : 20;
+}
+
+.labelGauche{
+	-fx-background-color : grey;
+	-fx-background-radius : 20;
+	
+	-fx-text-fill : white;
+	-fx-font-size : 28;
+}
+
+
+.labelScore {
+	-fx-text- : "arcade";
+	-fx-text-fill : white;
+	-fx-font-size : 26;
+}
+
+.sliderBienPlaces{
+	-track-color : green;
+	-fx-text-fill : green;
+	
+}
+
+.sliderMalPlaces{
+	-fx-control-inner-background : red;
+}
+
+.boutonDemarrer {
+	-fx-background-color : white;
+	-fx-border-color : black;
+	
+	-fx-text-fill : black;
+	-fx-font-size : 32;
+	-fx-text-family : arcade;
+}
+
+.boutonMenu{
+	
+}
+
+.labelMenu{
+	
+}
