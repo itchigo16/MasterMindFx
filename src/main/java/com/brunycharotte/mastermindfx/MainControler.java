@@ -86,7 +86,6 @@ public class MainControler {
         if (checkEmptyCase() != -1 && canClick){
             getRightCircle().setFill(vert.getBackground().getFills().get(0).getFill());
         }
-
     }
     public void onClickRed() {
         if (checkEmptyCase() != -1 && canClick){
@@ -175,20 +174,27 @@ public class MainControler {
                     }
                 }
                 System.out.println(Arrays.toString(intCode));
+
+
                 placeBienMalPlace(MasterMindAlgo.nbBienMalPlaces(secretCode, intCode));
                 if (Arrays.equals(secretCode, intCode)) { // WIN
                     System.out.println("gg");
                     canClick = false;
                     changerButton.setVisible(true);
-                    scoreRobot += 8 - activeRow/2 + 1;
-                } else if (activeRow > 1) activeRow -= 2; // MANCHE PAS FINIS
+                    scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
+                }
+                else if (activeRow > 1) activeRow -= 2; // MANCHE PAS FINIS
                 else { // LOSE SI MANCHE FINIS
-                    // TODO: 08/11/2022 FAIRE MALUS
+                    int[] nbBienMalPlaces = MasterMindAlgo.nbBienMalPlaces(secretCode, intCode);
+
+                    scoreRobot += Integer.parseInt( ((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
+                    scoreRobot += nbBienMalPlaces[1] + 2 * (intCode.length - (nbBienMalPlaces[0] + nbBienMalPlaces[1]));
+
+                    // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
                     changerButton.setVisible(true);
                     canClick = false;
                     System.out.println("BAD");
                 }
-
             }
         }
     }
@@ -262,6 +268,4 @@ public class MainControler {
         HBox mainRow = (HBox) plateau.getChildren().get(n);
         return (HBox) mainRow.getChildren().get(1);
     }
-
-
 }

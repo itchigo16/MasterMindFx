@@ -153,7 +153,10 @@ public class BotControler {
             cod[(16 - activeRow)/2] = intCode;
 
             activeRow -= 2;
-            updateNewCode();
+
+            int levelBot = 2;
+
+            updateNewCode(levelBot);
 
         }
     }
@@ -186,19 +189,16 @@ public class BotControler {
      * c'est-à-dire que si cod[nbCoups] était le code secret, les réponses aux nbCoups premières
      * propositions de cod seraient les nbCoups premières réponses de rep
      */
-    public boolean estCompat() {
-    /*
-      Bon c'est galere a comprendre mais en gros on s'etait trompé sur ce qu'il fallait faire, enfaite faut comparer le dernier coups, avec les ancien
-      En mode:
-       code S = 1111
-      roposition 1 = 1100
-      tu compare avec bienMalplacé et t'as =   20
-      maintenant tu cherches une autre proposition qui qd tu vas comparer avec la proposition 1, te donnera le meme resultat
-      bon la c'est un exemple de merde car la seule autre solution c'est 1111 mais avec + de couleur ça permet d'enlever pas mal de possibilité
-    */
+    public boolean estCompat(int level) {
         for (int i = 0; i < (16 - activeRow)/2; i++) {
             int[] nbbienmalplacescodI = MasterMindAlgo.nbBienMalPlaces(cod[i], cod[(16 - activeRow)/2]);
-            if (!Arrays.equals(nbbienmalplacescodI, rep[i])) {
+            if (level == 1) {
+                for (int j = 0; j < 2; j++) {
+                    if (nbbienmalplacescodI[j] > 1) nbbienmalplacescodI[j] -= 1;
+                    if (rep[i][j] > 1) rep[i][j] -= 1;
+                }
+            }
+            if (Arrays.equals(nbbienmalplacescodI, rep[i])) {
                 return false;
             }
         }
@@ -217,25 +217,24 @@ public class BotControler {
      * si ce code existe
      * résultat : vrai ssi l'action a pu être effectuée
      */
-    public boolean passePropSuivante() {
+    public boolean passePropSuivante(int level) {
         int nbCoups = (16 - activeRow)/2;
         cod[nbCoups] = Arrays.copyOf(cod[nbCoups- 1], 4);
         while (passeCodeSuivantLexico(cod[nbCoups])) { // Tant que il en reste dans les possibilité ( genre 00 -> 01 -> 10 -> 11 ) jsp comment expliquer, mais bref ça sort de la boucle quand il y a plus de possibilité et ça return false
-            if (estCompat()) { // si le nombre est compatible ça return vrai
+            if (estCompat(level)) { // si le nombre est compatible ça return vrai
                 return true;
             }
         }
         return false;
     }
 
-    private void updateNewCode() {
-        if (passePropSuivante()) {
+
+    private void updateNewCode(int level) {
+        if (passePropSuivante(level)) {
             for (int i = 0; i < 4; i++) {
                 Circle circle = (Circle) getCircleHbox().getChildren().get(i);
                 circle.setFill(ensembleCouleurs.get(cod[(16-activeRow)/2][i]));
             }
         }
-
     }
-
 }
