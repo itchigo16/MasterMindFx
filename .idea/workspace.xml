@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="j'ai fait le design et le score">
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="le boutton quitter sert vraiment mtn">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +102,14 @@
       <workItem from="1667927926984" duration="1000" />
       <workItem from="1667994124705" duration="1439000" />
     </task>
+    <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
+      <created>1667998158435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667998158435</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="le boutton quitter sert vraiment mtn" />
+    <option name="LAST_COMMIT_MESSAGE" value="le boutton quitter sert vraiment mtn" />
   </component>
 </project>

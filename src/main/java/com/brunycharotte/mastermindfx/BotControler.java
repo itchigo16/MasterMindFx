@@ -27,21 +27,10 @@ public class BotControler {
     private Stage stage;
     public int[] guessedCode = new int[4];
 
-    @FXML
-    Button vert;
-    @FXML
-    Button rouge;
-    @FXML
-    Button violet;
-    @FXML
-    Button orange;
-    @FXML
-    Button yellow;
-    @FXML
-    Button bleu;
-
     int[][] cod = new int[9][4];
     int[][] rep = new int[9][2];
+
+    int[] secretCode;
 
     @FXML
     Slider bienPlaceSlider;
@@ -63,7 +52,13 @@ public class BotControler {
     @FXML
     Label scoreBot;
 
+    boolean canClick = true;
+
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
+
+    public void setSecretCode(int[] secretCode) {
+        this.secretCode = secretCode;
+    }
 
     public void updateScore(int scoreJoueur, int scoreRobot) {
         scoreJ1_int = scoreJoueur;
@@ -71,7 +66,8 @@ public class BotControler {
         this.scoreJoueur.setText(scoreJ1_int + "");
         this.scoreBot.setText(scoreRobot + "");
     }
-    public void switchToBot(ActionEvent event) throws IOException {
+
+    public void switchToHuman(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
         root = fxmlLoader.load();
         MainControler controler = fxmlLoader.getController();
@@ -85,6 +81,7 @@ public class BotControler {
 
     @FXML
     Button boutonQuitter;
+
     public void quitButton() {
         Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
         stage1.close();
@@ -134,36 +131,39 @@ public class BotControler {
     }
 
     public void updateBienMalPlace() {
-        int[] nbBienMalPlace = checkAnswerIsCorrect();
-        if (!Arrays.equals(nbBienMalPlace, new int[]{-1, -1})) {
-            HBox mainHbox = getRow();
-            GridPane gridPane = (GridPane) mainHbox.getChildren().get(2);
-            for (int i = 0; i < nbBienMalPlace[0]; i++) {
-                ((Circle) gridPane.getChildren().get(i)).setFill(ensembleCouleurs.get(0));
-            }
-            for (int i = 0; i < nbBienMalPlace[1]; i++) {
-                ((Circle) gridPane.getChildren().get(i + nbBienMalPlace[0])).setFill(ensembleCouleurs.get(1));
-            }
-            rep[(16 - activeRow)/2] = nbBienMalPlace;
-            String[] code = new String[4];
-            for (int i = 0; i < 4; i++) {
-                code[i] = ((Circle) getCircleHbox().getChildren().get(i)).getFill().toString();
-            }
-            int[] intCode = new int[4];
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 6; j++) {
-                    if (ensembleCouleurs.get(j).toString().equals(code[i])) {
-                        intCode[i] = j;
+        if (canClick) {
+            int[] nbBienMalPlace = checkAnswerIsCorrect();
+            if (!Arrays.equals(nbBienMalPlace, new int[]{-1, -1})) {
+                HBox mainHbox = getRow();
+                GridPane gridPane = (GridPane) mainHbox.getChildren().get(2);
+                for (int i = 0; i < nbBienMalPlace[0]; i++) {
+                    ((Circle) gridPane.getChildren().get(i)).setFill(ensembleCouleurs.get(0));
+                }
+                for (int i = 0; i < nbBienMalPlace[1]; i++) {
+                    ((Circle) gridPane.getChildren().get(i + nbBienMalPlace[0])).setFill(ensembleCouleurs.get(1));
+                }
+                rep[(16 - activeRow) / 2] = nbBienMalPlace;
+                String[] code = new String[4];
+                for (int i = 0; i < 4; i++) {
+                    code[i] = ((Circle) getCircleHbox().getChildren().get(i)).getFill().toString();
+                }
+                int[] intCode = new int[4];
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 6; j++) {
+                        if (ensembleCouleurs.get(j).toString().equals(code[i])) {
+                            intCode[i] = j;
+                        }
                     }
                 }
+                cod[(16 - activeRow) / 2] = intCode;
+
+                activeRow -= 2;
+
+                int levelBot = 2;
+
+                updateNewCode(levelBot);
+
             }
-            cod[(16 - activeRow)/2] = intCode;
-
-            activeRow -= 2;
-
-            int levelBot = 2;
-
-            updateNewCode(levelBot);
 
         }
     }
@@ -197,15 +197,15 @@ public class BotControler {
      * propositions de cod seraient les nbCoups premières réponses de rep
      */
     public boolean estCompat(int level) {
-        for (int i = 0; i < (16 - activeRow)/2; i++) {
-            int[] nbbienmalplacescodI = MasterMindAlgo.nbBienMalPlaces(cod[i], cod[(16 - activeRow)/2]);
+        for (int i = 0; i < (16 - activeRow) / 2; i++) {
+            int[] nbbienmalplacescodI = MasterMindAlgo.nbBienMalPlaces(cod[i], cod[(16 - activeRow) / 2]);
             if (level == 1) {
                 for (int j = 0; j < 2; j++) {
                     if (nbbienmalplacescodI[j] > 1) nbbienmalplacescodI[j] -= 1;
                     if (rep[i][j] > 1) rep[i][j] -= 1;
                 }
             }
-            if (Arrays.equals(nbbienmalplacescodI, rep[i])) {
+            if (!Arrays.equals(nbbienmalplacescodI, rep[i])) {
                 return false;
             }
         }
@@ -225,8 +225,8 @@ public class BotControler {
      * résultat : vrai ssi l'action a pu être effectuée
      */
     public boolean passePropSuivante(int level) {
-        int nbCoups = (16 - activeRow)/2;
-        cod[nbCoups] = Arrays.copyOf(cod[nbCoups- 1], 4);
+        int nbCoups = (16 - activeRow) / 2;
+        cod[nbCoups] = Arrays.copyOf(cod[nbCoups - 1], 4);
         while (passeCodeSuivantLexico(cod[nbCoups])) { // Tant que il en reste dans les possibilité ( genre 00 -> 01 -> 10 -> 11 ) jsp comment expliquer, mais bref ça sort de la boucle quand il y a plus de possibilité et ça return false
             if (estCompat(level)) { // si le nombre est compatible ça return vrai
                 return true;
@@ -235,13 +235,40 @@ public class BotControler {
         return false;
     }
 
+    @FXML
+    Button changerButton;
 
     private void updateNewCode(int level) {
         if (passePropSuivante(level)) {
             for (int i = 0; i < 4; i++) {
                 Circle circle = (Circle) getCircleHbox().getChildren().get(i);
-                circle.setFill(ensembleCouleurs.get(cod[(16-activeRow)/2][i]));
+                circle.setFill(ensembleCouleurs.get(cod[(16 - activeRow) / 2][i]));
+            }
+            if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
+                System.out.println("GG");
+                changerButton.setVisible(true);
+                scoreJ1_int += 8 - activeRow/2 + 1;
+                canClick = false;
+            } else if (activeRow < 0) System.out.println("bot a atteint le max ?");
+        }
+    }
+
+
+    private int[] getSecretCodeFromColors() {
+        int[] secretCode = new int[4];
+        String[] code = new String[4];
+        for (int i = 0; i < 4; i++) {
+            code[i] = ((Circle) getCircleHbox().getChildren().get(i)).getFill().toString();
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (ensembleCouleurs.get(j).toString().equals(code[i])) {
+                    secretCode[i] = j;
+                }
             }
         }
+        System.out.println(Arrays.toString(secretCode));
+        return secretCode;
+
     }
 }

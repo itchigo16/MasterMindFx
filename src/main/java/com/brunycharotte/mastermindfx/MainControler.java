@@ -70,14 +70,13 @@ public class MainControler {
     }
 
     public void switchToBot(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindBot.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPickCode.fxml"));
         root = fxmlLoader.load();
-        BotControler controler = fxmlLoader.getController();
+        ChoisirCodeControler controler = fxmlLoader.getController();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         controler.setEnsembleCouleurs(this.ensembleCouleurs);
-        controler.putFirstCode();
         controler.updateScore(scoreJ1_int, scoreRobot);
         stage.show();
     }

@@ -59,6 +59,10 @@ Pane {
 	-fx-font-size : 20;
 }
 
+.labelGauche {
+	-fx-font-size: 15;
+}
+
 Pane > .labelScore {
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
