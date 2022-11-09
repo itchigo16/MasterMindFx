@@ -211,6 +211,13 @@ public class MainControler {
         }
     }
 
+    @FXML
+    Button boutonQuitter;
+    public void quitButton() {
+        Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
+        stage1.close();
+    }
+
     private void placeBienMalPlace(int[] nbBienMalPlace) {
         GridPane gridPane = getActiveNbBienMal();
         for (int i = 0; i < nbBienMalPlace[0]; i++) {

@@ -83,6 +83,13 @@ public class BotControler {
         stage.show();
     }
 
+    @FXML
+    Button boutonQuitter;
+    public void quitButton() {
+        Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
+        stage1.close();
+    }
+
     public void setEnsembleCouleurs(HashMap<Integer, Paint> ensembleCouleurs) {
         this.ensembleCouleurs = ensembleCouleurs;
     }
