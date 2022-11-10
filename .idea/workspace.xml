@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MasterMindFX_git:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="le boutton quitter sert vraiment mtn">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="switch de toutes les scenes + choix du code secret">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/all_blury.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -49,16 +61,31 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/kumai/.jdks/openjdk-19.0.1",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.brunycharotte.mastermindfx.Main" />
+      <module name="MasterMindFX_git" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.brunycharotte.mastermindfx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MasterMindLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -87,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MasterMindLauncher" />
       </list>
     </recent_temporary>
@@ -94,13 +122,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="514063e8-1230-4f8a-b7ff-a9d626161436" name="Changes" comment="" />
+      <changelist id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="switch de toutes les scenes + choix du code secret" />
       <created>1667927925841</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667927925841</updated>
       <workItem from="1667927926984" duration="1000" />
       <workItem from="1667994124705" duration="1439000" />
+      <workItem from="1668011041551" duration="67000" />
+      <workItem from="1668011862088" duration="6006000" />
+      <workItem from="1668069259057" duration="777000" />
+      <workItem from="1668075011311" duration="8798000" />
+      <workItem from="1668097113325" duration="1650000" />
+      <workItem from="1668100785193" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
       <created>1667998158435</created>
@@ -109,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667998158435</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="switch de toutes les scenes + choix du code secret">
+      <created>1668003232343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668003232343</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +169,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="le boutton quitter sert vraiment mtn" />
-    <option name="LAST_COMMIT_MESSAGE" value="le boutton quitter sert vraiment mtn" />
+    <MESSAGE value="switch de toutes les scenes + choix du code secret" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch de toutes les scenes + choix du code secret" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

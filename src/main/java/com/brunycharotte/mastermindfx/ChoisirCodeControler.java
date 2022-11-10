@@ -21,9 +21,9 @@ import java.util.HashMap;
 public class ChoisirCodeControler {
 
 
-    private Parent root;
-    private Scene scene;
-    private Stage stage;
+    Parent root;
+    Scene scene;
+    Stage stage;
 
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
 
@@ -35,6 +35,26 @@ public class ChoisirCodeControler {
 
     @FXML
     Label scoreBot;
+
+    @FXML
+    Button vert;
+    @FXML
+    Button rouge;
+    @FXML
+    Button violet;
+    @FXML
+    Button orange;
+    @FXML
+    Button yellow;
+    @FXML
+    Button bleu;
+
+    @FXML
+    HBox rowCirclePick;
+
+    @FXML
+    Button boutonQuitter;
+
 
     public void setEnsembleCouleurs(HashMap<Integer, Paint> ensembleCouleurs) {
         this.ensembleCouleurs = ensembleCouleurs;
@@ -59,6 +79,7 @@ public class ChoisirCodeControler {
             controler.putFirstCode();
             controler.updateScore(scoreJ1_int, scoreRobot);
             controler.setSecretCode(getSecretCodeFromColors());
+            controler.updateSecretCodeRow();
             stage.show();
         }
 
@@ -89,9 +110,6 @@ public class ChoisirCodeControler {
         return true;
     }
 
-    @FXML
-    Button boutonQuitter;
-
     public void quitButton() {
         Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
         stage1.close();
@@ -103,23 +121,6 @@ public class ChoisirCodeControler {
         System.out.println(nb);
         ((Circle) rowCirclePick.getChildren().get(Integer.parseInt(nb) - 1)).setFill(Paint.valueOf("0xffffffff"));
     }
-
-
-    @FXML
-    Button vert;
-    @FXML
-    Button rouge;
-    @FXML
-    Button violet;
-    @FXML
-    Button orange;
-    @FXML
-    Button yellow;
-    @FXML
-    Button bleu;
-
-    @FXML
-    HBox rowCirclePick;
 
     private int checkEmptyCase() {
         for (int i = 0; i < 4; i++) { // 4 pour lgCode = 4

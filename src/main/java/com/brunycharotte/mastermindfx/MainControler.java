@@ -155,6 +155,9 @@ public class MainControler {
         this.ensembleCouleurs = ensembleCouleurs;
     }
 
+    @FXML
+    Button validerButton;
+
     public void envoyerCode() {
         if (canClick) {
             System.out.println(Arrays.toString(secretCode));
@@ -179,10 +182,15 @@ public class MainControler {
                 if (Arrays.equals(secretCode, intCode)) { // WIN
                     System.out.println("gg");
                     canClick = false;
+                    validerButton.setVisible(false);
                     changerButton.setVisible(true);
+
                     scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
                 }
-                else if (activeRow > 1) activeRow -= 2; // MANCHE PAS FINIS
+                else if (activeRow > 1) {
+                    updateRowIDHighlight();
+                    activeRow -= 2;
+                } // MANCHE PAS FINIS
                 else { // LOSE SI MANCHE FINIS
                     int[] nbBienMalPlaces = MasterMindAlgo.nbBienMalPlaces(secretCode, intCode);
 
@@ -196,6 +204,16 @@ public class MainControler {
                 }
             }
         }
+    }
+
+    private void updateRowIDHighlight() {
+        HBox mainRow = (HBox) plateau.getChildren().get(activeRow);
+        Label elt = (Label) mainRow.getChildren().get(0);
+        elt.setId("");
+        elt.setOpacity(0.25);
+        mainRow = (HBox) plateau.getChildren().get(activeRow - 2);
+        elt = (Label) mainRow.getChildren().get(0);
+        elt.setId("gros");
     }
 
     private void clearAll(){
@@ -244,30 +262,6 @@ public class MainControler {
                 }
             }
         }
-    }
-
-    public Button getYellow() {
-        return yellow;
-    }
-
-    public Button getBleu() {
-        return bleu;
-    }
-
-    public Button getOrange() {
-        return orange;
-    }
-
-    public Button getRouge() {
-        return rouge;
-    }
-
-    public Button getVert() {
-        return vert;
-    }
-
-    public Button getViolet() {
-        return violet;
     }
 
     public HBox getNRow(int n){

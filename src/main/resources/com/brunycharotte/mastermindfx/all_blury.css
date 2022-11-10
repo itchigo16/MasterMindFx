@@ -1,0 +1,48 @@
+
+Pane {
+    -fx-background-color: #222831;
+}
+
+.bouton, .palette, .labelGauche, .labelManche, .labelScore,.labelTitle, #plateauVbox, .labelCodePick {
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 18;
+}
+
+.labelTitle {
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);*/
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-text-fill: #FFD369;
+}
+
+.bouton:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
+}
+
+#labelChoix {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-text-fill: #FFD369;
+    -fx-font-size: 18;
+}
+
+
+.palette, .labelCodePick {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+#boutonValider {
+    -fx-text-fill: #588C73;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+#boutonQuitter {
+    -fx-text-fill: #EC625F;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}

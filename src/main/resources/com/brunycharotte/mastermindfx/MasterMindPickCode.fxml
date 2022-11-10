@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -17,28 +17,15 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunycharotte.mastermindfx.BotControler">
+<Pane id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="900.0" stylesheets="@all_blury.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunycharotte.mastermindfx.ChoisirCodeControler">
    <children>
-      <Pane id="palette" fx:id="palette" layoutX="681.0" layoutY="82.0" prefHeight="264.0" prefWidth="192.0" styleClass="palette">
-         <children>
-            <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="65.0" prefWidth="179.0" styleClass="labelDroite" stylesheets="@style.css" text="Combien de jetons bien placés ?" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Agency FB" size="24.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="7.0" layoutY="132.0" prefHeight="65.0" prefWidth="179.0" styleClass="labelDroite" stylesheets="@style.css" text="Combien de jetons bien placés ?" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Agency FB" size="24.0" />
-               </font>
-            </Label>
-            <Slider fx:id="bienPlaceSlider" blockIncrement="1.0" layoutX="15.0" layoutY="83.0" majorTickUnit="1.0" max="4.0" minorTickCount="0" prefHeight="42.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderBienPlaces" />
-            <Slider fx:id="malPlaceSlider" blockIncrement="1.0" layoutX="15.0" layoutY="201.0" majorTickUnit="1.0" max="4.0" minorTickCount="0" prefHeight="42.0" prefWidth="163.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderMalPlaces" />
-         </children>
-      </Pane>
       <ImageView id="logo" fitHeight="192.0" fitWidth="192.0" layoutX="47.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo.png" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </ImageView>
       <GridPane alignment="CENTER" layoutX="49.0" layoutY="396.0" prefHeight="91.0" prefWidth="192.0" styleClass="labelScore">
          <columnConstraints>
@@ -90,28 +77,35 @@
                </font>
             </Label>
          </children>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </GridPane>
-      <Button id="boutonHistorique" fx:id="boutonHistorique" alignment="CENTER" layoutX="27.0" layoutY="499.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="237.0" styleClass="bouton" stylesheets="@style.css" text="Historique des manches">
-         <font>
-            <Font name="Agency FB Bold" size="30.0" />
-         </font>
-      </Button>
-      <Label id="instruction" alignment="CENTER" layoutX="49.0" layoutY="317.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelGauche" text="Le robot decode !">
+      <Label id="instruction" alignment="CENTER" layoutX="49.0" layoutY="317.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelGauche" text="Choisis ton code Secret">
          <font>
             <Font name="Agency FB" size="36.0" />
          </font>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </Label>
       <Label alignment="CENTER" layoutX="49.0" layoutY="250.0" prefHeight="52.0" prefWidth="192.0" styleClass="labelManche" text="Manche numéro 1">
          <font>
             <Font name="Agency FB" size="28.0" />
          </font>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </Label>
       <Avatar fx:id="logoJoueurCourant" layoutX="118.0" layoutY="213.0" radius="25.0">
          <image>
             <Image url="@icone_joueur.png" />
          </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </Avatar>
-      <VBox id="plateauVbox" fx:id="plateau" layoutX="287.0" layoutY="78.0" prefHeight="483.0" prefWidth="352.0" spacing="4.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+      <VBox id="plateauVbox" fx:id="plateau" layoutX="287.0" layoutY="78.0" prefHeight="483.0" prefWidth="352.0" spacing="4.0" style="-fx-background-radius: 30; -fx-border-radius: 30;">
          <children>
             <HBox id="coup9" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
                <VBox.margin>
@@ -454,7 +448,7 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label id="gros" text="1." textFill="WHITE">
+                  <Label text="1." textFill="WHITE">
                      <font>
                         <Font name="Agency FB" size="26.0" />
                      </font>
@@ -494,13 +488,16 @@
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </VBox>
-      <Button id="boutonValider" fx:id="validerButton" layoutX="681.0" layoutY="433.0" mnemonicParsing="false" onAction="#updateBienMalPlace" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Valider">
+      <Button id="boutonValider" layoutX="681.0" layoutY="430.0" mnemonicParsing="false" onAction="#switchToBot" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" text="Valider">
          <font>
             <Font name="Agency FB" size="12.0" />
          </font>
       </Button>
-      <Button id="boutonQuitter" fx:id="boutonQuitter" alignment="CENTER" layoutX="681.0" layoutY="499.0" mnemonicParsing="false" onAction="#quitButton" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Quitter la partie">
+      <Button id="boutonQuitter" fx:id="boutonQuitter" alignment="CENTER" layoutX="681.0" layoutY="499.0" mnemonicParsing="false" onAction="#quitButton" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" text="Quitter la partie">
          <font>
             <Font name="Agency FB Bold" size="30.0" />
          </font>
@@ -509,23 +506,40 @@
          <font>
             <Font name="Agency FB" size="36.0" />
          </font>
+         <effect>
+            <GaussianBlur />
+         </effect>
       </Label>
-      <Button fx:id="changerButton" layoutX="681.0" layoutY="433.0" mnemonicParsing="false" onAction="#switchToHuman" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Prochaine Manche" visible="false">
-         <font>
-            <Font name="Agency FB" size="12.0" />
-         </font>
-      </Button>
-      <Label layoutX="681.0" layoutY="359.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelGauche">
+      <Label layoutX="682.0" layoutY="359.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelCodePick">
          <graphic>
-            <HBox fx:id="rowSecretCode" alignment="CENTER" prefHeight="65.0" prefWidth="161.0" spacing="10.0">
+            <HBox fx:id="rowCirclePick" alignment="CENTER" prefHeight="65.0" prefWidth="161.0" spacing="10.0">
                <children>
-                  <Circle fx:id="circle1" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <Circle fx:id="circle2" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <Circle fx:id="circle3" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <Circle fx:id="circle4" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Circle fx:id="circle1" fill="WHITE" onMouseClicked="#removeCircle" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="bouton" />
+                  <Circle fx:id="circle2" fill="WHITE" onMouseClicked="#removeCircle" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="bouton" />
+                  <Circle fx:id="circle3" fill="WHITE" onMouseClicked="#removeCircle" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="bouton" />
+                  <Circle fx:id="circle4" fill="WHITE" onMouseClicked="#removeCircle" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="bouton" />
                </children>
             </HBox>
-         </graphic>
+         </graphic></Label>
+      <Pane id="palette" fx:id="palette1" layoutX="682.0" layoutY="78.0" prefHeight="270.0" prefWidth="192.0" styleClass="palette">
+         <children>
+            <Label alignment="CENTER" layoutX="16.0" prefHeight="50.0" prefWidth="150.0" styleClass="labelDroite" stylesheets="@style.css" text="Palette de couleur" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Agency FB" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="rouge" layoutX="112.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" onAction="#onClickRed" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: red;" styleClass="bouton" />
+            <Button fx:id="yellow" layoutX="112.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="53.0" mnemonicParsing="false" onAction="#onClickJaune" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: yellow;" styleClass="bouton" />
+            <Button fx:id="vert" layoutX="21.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" onAction="#onClickVert" prefHeight="51.0" prefWidth="30.0" style="-fx-background-radius: 30; -fx-background-color: green;" styleClass="bouton" />
+            <Button fx:id="bleu" layoutX="21.0" layoutY="118.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" onAction="#onClickBlue" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: blue;" styleClass="bouton" />
+            <Button fx:id="orange" layoutX="21.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" onAction="#onClickOrange" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: orange;" styleClass="bouton" />
+            <Button fx:id="violet" layoutX="112.0" layoutY="118.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" onAction="#onClickViolet" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: purple;" styleClass="bouton" />
+         </children>
+      </Pane>
+      <Label id="labelChoix" alignment="CENTER" layoutX="658.0" layoutY="14.0" prefHeight="50.0" prefWidth="237.0" text="CHOISIS TON CODE">
+         <font>
+            <Font name="Agency FB" size="36.0" />
+         </font>
       </Label>
    </children>
 </Pane>

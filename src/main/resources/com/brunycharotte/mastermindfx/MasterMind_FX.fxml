@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import com.gluonhq.charm.glisten.control.Avatar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<Pane id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="900.0" styleClass="paneScene" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunycharotte.mastermindfx.MainControler">
+<Pane id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="900.0" styleClass="paneScene" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunycharotte.mastermindfx.MainControler">
     <children>
         <VBox id="plateauVbox" fx:id="plateau" layoutX="287.0" layoutY="78.0" prefHeight="483.0" prefWidth="352.0" spacing="4.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
             <children>
@@ -316,9 +324,9 @@
                                 <Font name="Agency FB" size="26.0" />
                             </font>
                         </Label>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                        <HBox id="hbox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                             <children>
-                                <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                <Circle id="c1" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                 <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                 <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                 <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
@@ -353,7 +361,7 @@
                         <Insets />
                     </VBox.margin>
                     <children>
-                        <Label text="1." textFill="WHITE">
+                        <Label id="gros" text="1." textFill="WHITE">
                             <font>
                                 <Font name="Agency FB" size="26.0" />
                             </font>
@@ -470,22 +478,17 @@
                 <Font name="Agency FB" size="28.0" />
             </font>
         </Label>
-        <Avatar fx:id="logoJoueurCourant" layoutX="118.0" layoutY="213.0" radius="25.0" snapToPixel="false">
-            <image>
-                <Image url="@icone_joueur.png" />
-            </image>
-        </Avatar>
-        <Button id="boutonEffacer" layoutX="681.0" layoutY="298.0" mnemonicParsing="false" onAction="#removeLastCircle" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
+        <Button id="boutonEffacer" layoutX="681.0" layoutY="367.0" mnemonicParsing="false" onAction="#removeLastCircle" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
             <font>
                 <Font name="Agency FB" size="12.0" />
             </font>
         </Button>
-        <Button id="boutonValider" layoutX="681.0" layoutY="367.0" mnemonicParsing="false" onAction="#envoyerCode" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Valider">
+        <Button id="boutonValider" fx:id="validerButton" layoutX="681.0" layoutY="433.0" mnemonicParsing="false" onAction="#envoyerCode" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Valider">
             <font>
                 <Font name="Agency FB" size="12.0" />
             </font>
         </Button>
-        <Pane id="palette" fx:id="palette1" layoutX="681.0" layoutY="14.0" prefHeight="270.0" prefWidth="192.0" styleClass="palette">
+        <Pane id="palette" fx:id="palette1" layoutX="681.0" layoutY="78.0" prefHeight="270.0" prefWidth="192.0" styleClass="palette">
             <children>
                 <Label alignment="CENTER" layoutX="16.0" prefHeight="50.0" prefWidth="150.0" styleClass="labelDroite" stylesheets="@style.css" text="Palette de couleur" textAlignment="CENTER" wrapText="true">
                     <font>
@@ -510,5 +513,10 @@
             <Font name="Agency FB" size="36.0" />
          </font>
       </Label>
+      <Avatar fx:id="logoJoueurCourant" layoutX="118.0" layoutY="213.0" radius="25.0">
+         <image>
+            <Image url="@icone_joueur.png" />
+         </image>
+      </Avatar>
     </children>
 </Pane>

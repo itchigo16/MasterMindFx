@@ -24,6 +24,25 @@ Pane {
 	-fx-font-size : 18;
 }
 
+#gros {
+	-fx-text-fill: rgba(238, 238, 238, 0.93);
+	-fx-effect: dropshadow(three-pass-box, rgba(238, 238, 238, 0.76), 10, 0, 0, 0);
+}
+
+
+
+.button:hover{
+	-fx-cursor: hand;
+	-fx-scale-x: 1.1;
+	-fx-scale-y: 1.1;
+	-fx-scale-z: 1.1;
+
+}
+
+#changerButton {
+	-fx-text-fill: #FFD369;
+}
+
 .palette{
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 	-fx-background-radius : 20;
@@ -116,4 +135,8 @@ Pane > .labelScore > .labelScore {
 
 .labelMenu{
 	
+}
+
+#logo_Joueur {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }

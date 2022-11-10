@@ -36,6 +36,9 @@ public class BotControler {
     Slider bienPlaceSlider;
 
     @FXML
+    HBox rowSecretCode;
+
+    @FXML
     Slider malPlaceSlider;
 
     int activeRow = 16;
@@ -53,6 +56,12 @@ public class BotControler {
     Label scoreBot;
 
     boolean canClick = true;
+
+    @FXML
+    Button changerButton;
+    @FXML
+    Button validerButton;
+
 
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
 
@@ -116,6 +125,17 @@ public class BotControler {
         }
     }
 
+    private void updateRowIDHighlight() {
+        int row = activeRow + 2;
+        HBox mainRow = (HBox) plateau.getChildren().get(row);
+        Label elt = (Label) mainRow.getChildren().get(0);
+        elt.setId("");
+        elt.setOpacity(0.25);
+        mainRow = (HBox) plateau.getChildren().get(row - 2);
+        elt = (Label) mainRow.getChildren().get(0);
+        elt.setId("gros");
+    }
+
     private int[] checkAnswerIsCorrect() {
         int[] resultat = new int[2];
         if (bienPlaceSlider.getValue() + malPlaceSlider.getValue() > 4) {
@@ -134,15 +154,6 @@ public class BotControler {
         if (canClick) {
             int[] nbBienMalPlace = checkAnswerIsCorrect();
             if (!Arrays.equals(nbBienMalPlace, new int[]{-1, -1})) {
-                HBox mainHbox = getRow();
-                GridPane gridPane = (GridPane) mainHbox.getChildren().get(2);
-                for (int i = 0; i < nbBienMalPlace[0]; i++) {
-                    ((Circle) gridPane.getChildren().get(i)).setFill(ensembleCouleurs.get(0));
-                }
-                for (int i = 0; i < nbBienMalPlace[1]; i++) {
-                    ((Circle) gridPane.getChildren().get(i + nbBienMalPlace[0])).setFill(ensembleCouleurs.get(1));
-                }
-                rep[(16 - activeRow) / 2] = nbBienMalPlace;
                 String[] code = new String[4];
                 for (int i = 0; i < 4; i++) {
                     code[i] = ((Circle) getCircleHbox().getChildren().get(i)).getFill().toString();
@@ -155,13 +166,24 @@ public class BotControler {
                         }
                     }
                 }
-                cod[(16 - activeRow) / 2] = intCode;
+                if (Arrays.equals(nbBienMalPlace, MasterMindAlgo.nbBienMalPlaces(secretCode, intCode)) ) {
+                    HBox mainHbox = getRow();
+                    GridPane gridPane = (GridPane) mainHbox.getChildren().get(2);
+                    for (int i = 0; i < nbBienMalPlace[0]; i++) {
+                        ((Circle) gridPane.getChildren().get(i)).setFill(ensembleCouleurs.get(0));
+                    }
+                    for (int i = 0; i < nbBienMalPlace[1]; i++) {
+                        ((Circle) gridPane.getChildren().get(i + nbBienMalPlace[0])).setFill(ensembleCouleurs.get(1));
+                    }
+                    rep[(16 - activeRow) / 2] = nbBienMalPlace;
 
-                activeRow -= 2;
+                    cod[(16 - activeRow) / 2] = intCode;
 
-                int levelBot = 2;
+                    activeRow -= 2;
 
-                updateNewCode(levelBot);
+                    updateNewCode();
+                }
+                else System.out.println("not good");
 
             }
 
@@ -187,6 +209,13 @@ public class BotControler {
         return true;
     }
 
+    public void updateSecretCodeRow() {
+        for (int i = 0; i < 4; i++) {
+            ((Circle) rowSecretCode.getChildren().get(i)).setFill(ensembleCouleurs.get(secretCode[i]));
+        }
+    }
+
+
     //___________________________________________________________________
 
     /**
@@ -196,15 +225,9 @@ public class BotControler {
      * c'est-à-dire que si cod[nbCoups] était le code secret, les réponses aux nbCoups premières
      * propositions de cod seraient les nbCoups premières réponses de rep
      */
-    public boolean estCompat(int level) {
+    public boolean estCompat() {
         for (int i = 0; i < (16 - activeRow) / 2; i++) {
             int[] nbbienmalplacescodI = MasterMindAlgo.nbBienMalPlaces(cod[i], cod[(16 - activeRow) / 2]);
-            if (level == 1) {
-                for (int j = 0; j < 2; j++) {
-                    if (nbbienmalplacescodI[j] > 1) nbbienmalplacescodI[j] -= 1;
-                    if (rep[i][j] > 1) rep[i][j] -= 1;
-                }
-            }
             if (!Arrays.equals(nbbienmalplacescodI, rep[i])) {
                 return false;
             }
@@ -224,22 +247,20 @@ public class BotControler {
      * si ce code existe
      * résultat : vrai ssi l'action a pu être effectuée
      */
-    public boolean passePropSuivante(int level) {
+    public boolean passePropSuivante() {
         int nbCoups = (16 - activeRow) / 2;
         cod[nbCoups] = Arrays.copyOf(cod[nbCoups - 1], 4);
         while (passeCodeSuivantLexico(cod[nbCoups])) { // Tant que il en reste dans les possibilité ( genre 00 -> 01 -> 10 -> 11 ) jsp comment expliquer, mais bref ça sort de la boucle quand il y a plus de possibilité et ça return false
-            if (estCompat(level)) { // si le nombre est compatible ça return vrai
+            if (estCompat()) { // si le nombre est compatible ça return vrai
                 return true;
             }
         }
         return false;
     }
 
-    @FXML
-    Button changerButton;
 
-    private void updateNewCode(int level) {
-        if (passePropSuivante(level)) {
+    private void updateNewCode() {
+        if (passePropSuivante()) {
             for (int i = 0; i < 4; i++) {
                 Circle circle = (Circle) getCircleHbox().getChildren().get(i);
                 circle.setFill(ensembleCouleurs.get(cod[(16 - activeRow) / 2][i]));
@@ -247,9 +268,19 @@ public class BotControler {
             if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
                 System.out.println("GG");
                 changerButton.setVisible(true);
+                validerButton.setVisible(false);
+
                 scoreJ1_int += 8 - activeRow/2 + 1;
                 canClick = false;
-            } else if (activeRow < 0) System.out.println("bot a atteint le max ?");
+            } else if (activeRow <= 0) System.out.println("bot a atteint le max ?");
+            else updateRowIDHighlight();
+        }
+        else {
+            canClick = false;
+            changerButton.setVisible(true);
+            validerButton.setVisible(false);
+            // TODO: 09/11/2022 FAIRE LES TEXTES POUR EXPLIQUER CE QU'IL SE PASSE
+
         }
     }
 
