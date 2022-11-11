@@ -428,7 +428,7 @@
                         <Font name="Agency FB Bold" size="25.0" />
                     </font>
                 </Label>
-                <Label style="-fx-font-style: white; -fx-font-size: 35;" styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                <Label styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                 <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;" styleClass="labelScore" text="0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                     <padding>
                         <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
@@ -477,7 +477,7 @@
                 <Font name="Agency FB" size="28.0" />
             </font>
         </Label>
-        <Button id="boutonEffacer" layoutX="681.0" layoutY="367.0" mnemonicParsing="false" onAction="#removeLastCircle" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
+        <Button id="boutonEffacer" fx:id="boutonEffacer" layoutX="681.0" layoutY="367.0" mnemonicParsing="false" onAction="#removeLastCircle" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
             <font>
                 <Font name="Agency FB" size="12.0" />
             </font>
@@ -517,5 +517,17 @@
             <Image url="@icone_joueur.png" />
          </image>
       </ImageView>
+      <Label fx:id="secretCodeLabel" layoutX="681.0" layoutY="369.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelGauche" visible="false">
+         <graphic>
+            <HBox fx:id="rowSecretCode" alignment="CENTER" prefHeight="65.0" prefWidth="161.0" spacing="10.0">
+               <children>
+                  <Circle fx:id="circle1" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Circle fx:id="circle2" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Circle fx:id="circle3" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Circle fx:id="circle4" fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+         </graphic>
+      </Label>
     </children>
 </Pane>

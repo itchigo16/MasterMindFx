@@ -88,7 +88,7 @@
                                 <Font name="Agency FB Bold" size="25.0"/>
                             </font>
                         </Label>
-                        <Label style="-fx-font-style: white; -fx-font-size: 35;" styleClass="labelScore" text=":"
+                        <Label styleClass="labelScore" text=":"
                                textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
                                GridPane.rowIndex="3"/>
                         <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;"

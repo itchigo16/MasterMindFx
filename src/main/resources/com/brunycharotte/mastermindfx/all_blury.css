@@ -30,9 +30,9 @@ Pane {
 
 #labelChoix {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-    -fx-background-color: #393E46;
+    -fx-background-color: #393e46;
     -fx-background-radius: 20;
-    -fx-text-fill: #FFD369;
+    -fx-text-fill: #ffd369;
     -fx-font-size: 18;
 }
 

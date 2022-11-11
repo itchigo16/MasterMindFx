@@ -53,7 +53,7 @@
                   <Font name="Agency FB Bold" size="25.0" />
                </font>
             </Label>
-            <Label style="-fx-font-style: white; -fx-font-size: 35;" styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;" styleClass="labelScore" text="13" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <padding>
                   <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />

@@ -40,6 +40,17 @@ Pane {
     -fx-text-fill: #FFD369;
 }
 
+#mainPanel {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+}
+
+#mainPanel > .label {
+    -fx-text-fill: #EEEEEEFF ;
+    -fx-font-size: 20;
+}
+
 .palette {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
     -fx-background-radius: 20;

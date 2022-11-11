@@ -8,8 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -30,8 +28,12 @@ public class MainControler {
 
     private boolean canClick = true;
 
+
+
     int[] secretCode = MasterMindAlgo.codeAleat();
 
+    @FXML
+    Label secretCodeLabel;
     @FXML
     Button validerButton;
     @FXML
@@ -53,6 +55,8 @@ public class MainControler {
 
     @FXML
     VBox plateau;
+    @FXML
+    Button boutonEffacer;
 
     @FXML
     Button changerButton;
@@ -217,12 +221,33 @@ public class MainControler {
                     scoreRobot += nbBienMalPlaces[1] + 2 * (intCode.length - (nbBienMalPlaces[0] + nbBienMalPlaces[1]));
 
                     // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
+                    setSecretCodeLabel();
+                    secretCodeLabel.setVisible(true);
+                    boutonEffacer.setVisible(false);
+
                     changerButton.setVisible(true);
                     canClick = false;
                     System.out.println("BAD");
                 }
             }
         }
+    }
+
+    private void setSecretCodeLabel() {
+        Paint[] code = intToPaintCode();
+        HBox hBox = (HBox) secretCodeLabel.getChildrenUnmodifiable().get(0);
+        for (int i = 0; i < 4; i++) {
+            Circle circle = (Circle) hBox.getChildren().get(i);
+            circle.setFill(code[i]);
+        }
+    }
+
+    private Paint[] intToPaintCode() {
+        Paint[] paints = new Paint[4];
+        for (int i = 0; i < 4; i++) {
+            paints[i] = ensembleCouleurs.get(secretCode[i]);
+        }
+        return paints;
     }
 
     private void updateRowIDHighlight() {
@@ -233,18 +258,6 @@ public class MainControler {
         mainRow = (HBox) plateau.getChildren().get(activeRow - 2);
         elt = (Label) mainRow.getChildren().get(0);
         elt.setId("gros");
-    }
-
-    private void clearAll() {
-        for (int i = 0; i <= 16; i++) {
-            if (i % 2 == 0) {
-                HBox hBox = getNRow(i);
-                for (int j = 0; j < 4; j++) {
-                    Circle circle = (Circle) hBox.getChildren().get(j);
-                    circle.setFill(Paint.valueOf("0xffffffff"));
-                }
-            }
-        }
     }
 
 
@@ -282,8 +295,4 @@ public class MainControler {
         }
     }
 
-    public HBox getNRow(int n) {
-        HBox mainRow = (HBox) plateau.getChildren().get(n);
-        return (HBox) mainRow.getChildren().get(1);
-    }
 }
