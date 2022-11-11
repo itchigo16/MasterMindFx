@@ -1,142 +1,150 @@
-@font-face {
-    font-family : 'arcade';
-	src : url(./fonts/arcade.ttf);
-}
-
 #logo {
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
 }
 
 Pane {
-	-fx-background-color: #222831;
+    -fx-background-color: #222831;
 }
 
 .bouton, .palette, .labelGauche, .labelManche, .labelScore, #plateauVbox {
-	-fx-background-color: #393E46;
+    -fx-background-color: #393E46;
 }
 
 .bouton {
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-	-fx-background-radius : 20;
-	
-	-fx-font-family : "arcade";
-	-fx-text-fill : #EEEEEE;
-	-fx-font-size : 18;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 20;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 18;
 }
 
 #gros {
-	-fx-text-fill: rgba(238, 238, 238, 0.93);
-	-fx-effect: dropshadow(three-pass-box, rgba(238, 238, 238, 0.76), 10, 0, 0, 0);
+    -fx-text-fill: rgba(238, 238, 238, 0.93);
+    -fx-effect: dropshadow(three-pass-box, rgba(238, 238, 238, 0.76), 10, 0, 0, 0);
 }
 
 
+.button:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
 
-.button:hover{
-	-fx-cursor: hand;
-	-fx-scale-x: 1.1;
-	-fx-scale-y: 1.1;
-	-fx-scale-z: 1.1;
+}
 
+.palette > .button:hover {
+    -fx-border-color: #FFD369;
+    -fx-border-radius: 30;
 }
 
 #changerButton {
-	-fx-text-fill: #FFD369;
+    -fx-text-fill: #FFD369;
 }
 
-.palette{
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-	-fx-background-radius : 20;
+.palette {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 20;
 }
 
-
-
-/*.labelDroite {*/
-/*	-fx-background-color : #444444;*/
-/*	-fx-background-radius : 20;*/
-/*	*/
-/*	-fx-font-family : arcade;*/
-/*	-fx-text-fill : #EDEDED;*/
-/*	-fx-font-size : 18;*/
-/*}*/
 
 .labelDroite {
-	-fx-text-fill : #EEEEEE;
+    -fx-text-fill: #EEEEEE;
+}
+
+.endingLabels {
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
+}
+
+
+#winnerLabel {
+    -fx-font-size: 20;
 }
 
 .labelTitle {
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-	-fx-background-color: #393E46;
-	-fx-background-radius: 20;
-	-fx-text-fill: #FFD369;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-text-fill: #FFD369;
 }
 
-.labelGauche, .labelManche{
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-	-fx-background-radius : 20;
+.labelGauche, .labelManche {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-radius: 20;
 
-	-fx-text-fill : #EEEEEE;
-	-fx-font-size : 20;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 20;
+}
+
+#endingLabel {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-text-fill: #FFD369;
+}
+#menuForegroundPane {
+    -fx-background-color: transparent;
+}
+
+.menuBoutons {
+    -fx-border-color: rgba(0, 0, 0, 0.8);
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+.menuBoutons:hover {
+    -fx-border-color: rgba(253, 220, 89, 0.8);
 }
 
 .labelGauche {
-	-fx-font-size: 15;
+    -fx-font-size: 15;
 }
 
 Pane > .labelScore {
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
 }
+
 Pane > .labelScore > .labelScore {
-	-fx-border-radius: 15;
-	-fx-border-width: 2;
-	-fx-font-size: 20px;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-font-size: 20px;
 }
 
 .labelScore {
-	-fx-background-radius: 20;
-	-fx-text- : "arcade";
-	-fx-text-fill : #EEEEEE;
-	-fx-font-size : 26;
+    -fx-background-radius: 20;
+    -fx-text-: "arcade";
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 26;
 }
 
-.sliderBienPlaces{
-	-fx-control-inner-background : green;
-	
+.sliderBienPlaces {
+    -fx-control-inner-background: green;
+
 }
 
-.sliderMalPlaces{
-	-fx-control-inner-background : red;
+.sliderMalPlaces {
+    -fx-control-inner-background: red;
 }
 
-.boutonDemarrer {
-	-fx-background-color : white;
-	-fx-border-color : black;
-	
-	-fx-text-fill : #525252;
-	-fx-font-size : 32;
-	-fx-text-family : arcade;
+#start {
+    -fx-text-fill: #588C73;
 }
 
-
-.boutonMenu{
-	
-}
 
 #boutonEffacer {
-	-fx-text-fill: #EC625F;
+    -fx-text-fill: #EC625F;
 }
 
 #boutonValider {
-	-fx-text-fill: #588C73;
+    -fx-text-fill: #588C73;
 }
 
 #boutonQuitter {
-	-fx-text-fill: #EC625F;
+    -fx-text-fill: #EC625F;
 }
 
-.labelMenu{
-	
+.labelMenu {
+
 }
 
 #logo_Joueur {
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
 }

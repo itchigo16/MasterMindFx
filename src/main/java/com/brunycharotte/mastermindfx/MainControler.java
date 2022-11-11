@@ -27,12 +27,13 @@ public class MainControler {
     int scoreJ1_int = 0;
     int scoreRobot = 0;
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
-    int[] code = new int[4];
 
     private boolean canClick = true;
 
     int[] secretCode = MasterMindAlgo.codeAleat();
 
+    @FXML
+    Button validerButton;
     @FXML
     Label scoreJoueur;
     @FXML
@@ -56,11 +57,25 @@ public class MainControler {
     @FXML
     Button changerButton;
 
+    @FXML
+    Button boutonQuitter;
+
     int activeRow = 16;
 
-    private Parent root;
-    private Scene scene;
-    private Stage stage;
+    Parent root;
+    Scene scene;
+    Stage stage;
+
+    int manche = 1;
+    @FXML
+    Label labelManche;
+
+
+    public void setManche(int manche) {
+        this.manche = manche;
+        labelManche.setText("manche numéro " + this.manche);
+
+    }
 
     public void updateScore(int scoreJoueur, int scoreRobot) {
         scoreJ1_int = scoreJoueur;
@@ -78,40 +93,47 @@ public class MainControler {
         stage.setScene(scene);
         controler.setEnsembleCouleurs(this.ensembleCouleurs);
         controler.updateScore(scoreJ1_int, scoreRobot);
+        manche++;
+        controler.setManche(this.manche++);
         stage.show();
     }
 
     public void onClickVert() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(vert.getBackground().getFills().get(0).getFill());
         }
     }
+
     public void onClickRed() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(rouge.getBackground().getFills().get(0).getFill());
         }
 
     }
+
     public void onClickViolet() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(violet.getBackground().getFills().get(0).getFill());
         }
 
     }
+
     public void onClickJaune() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(yellow.getBackground().getFills().get(0).getFill());
         }
 
     }
+
     public void onClickOrange() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(orange.getBackground().getFills().get(0).getFill());
         }
 
     }
+
     public void onClickBlue() {
-        if (checkEmptyCase() != -1 && canClick){
+        if (checkEmptyCase() != -1 && canClick) {
             getRightCircle().setFill(bleu.getBackground().getFills().get(0).getFill());
         }
 
@@ -133,7 +155,7 @@ public class MainControler {
         HBox hBox = (HBox) lastRow.getChildren().get(1);
         for (int i = 0; i < 4; i++) { // 4 pour lgCode = 4
             Circle circle = ((Circle) hBox.getChildren().get(i));
-            if (circle.getFill().toString().equals("0xffffffff")){
+            if (circle.getFill().toString().equals("0xffffffff")) {
                 return i;
             }
         }
@@ -155,9 +177,6 @@ public class MainControler {
         this.ensembleCouleurs = ensembleCouleurs;
     }
 
-    @FXML
-    Button validerButton;
-
     public void envoyerCode() {
         if (canClick) {
             System.out.println(Arrays.toString(secretCode));
@@ -174,6 +193,7 @@ public class MainControler {
                             intCode[i] = j;
                         }
                     }
+
                 }
                 System.out.println(Arrays.toString(intCode));
 
@@ -186,15 +206,14 @@ public class MainControler {
                     changerButton.setVisible(true);
 
                     scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
-                }
-                else if (activeRow > 1) {
+                } else if (activeRow > 1) {
                     updateRowIDHighlight();
                     activeRow -= 2;
                 } // MANCHE PAS FINIS
                 else { // LOSE SI MANCHE FINIS
                     int[] nbBienMalPlaces = MasterMindAlgo.nbBienMalPlaces(secretCode, intCode);
 
-                    scoreRobot += Integer.parseInt( ((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
+                    scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
                     scoreRobot += nbBienMalPlaces[1] + 2 * (intCode.length - (nbBienMalPlaces[0] + nbBienMalPlaces[1]));
 
                     // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
@@ -216,9 +235,9 @@ public class MainControler {
         elt.setId("gros");
     }
 
-    private void clearAll(){
+    private void clearAll() {
         for (int i = 0; i <= 16; i++) {
-            if (i%2 == 0) {
+            if (i % 2 == 0) {
                 HBox hBox = getNRow(i);
                 for (int j = 0; j < 4; j++) {
                     Circle circle = (Circle) hBox.getChildren().get(j);
@@ -228,8 +247,7 @@ public class MainControler {
         }
     }
 
-    @FXML
-    Button boutonQuitter;
+
     public void quitButton() {
         Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
         stage1.close();
@@ -264,7 +282,7 @@ public class MainControler {
         }
     }
 
-    public HBox getNRow(int n){
+    public HBox getNRow(int n) {
         HBox mainRow = (HBox) plateau.getChildren().get(n);
         return (HBox) mainRow.getChildren().get(1);
     }

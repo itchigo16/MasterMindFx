@@ -22,9 +22,9 @@ import java.util.HashMap;
 
 public class BotControler {
 
-    private Parent root;
-    private Scene scene;
-    private Stage stage;
+    Parent root;
+    Scene scene;
+    Stage stage;
     public int[] guessedCode = new int[4];
 
     int[][] cod = new int[9][4];
@@ -61,7 +61,16 @@ public class BotControler {
     Button changerButton;
     @FXML
     Button validerButton;
+    int manche;
+    @FXML
+    Label labelManche;
+    @FXML
+    Button boutonQuitter;
 
+    public void setManche(int manche) {
+        this.manche = manche;
+        labelManche.setText("manche numéro " + this.manche);
+    }
 
     HashMap<Integer, Paint> ensembleCouleurs = new HashMap<>(6);
 
@@ -77,19 +86,30 @@ public class BotControler {
     }
 
     public void switchToHuman(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
-        root = fxmlLoader.load();
-        MainControler controler = fxmlLoader.getController();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        controler.setEnsembleCouleurs(this.ensembleCouleurs);
-        controler.updateScore(scoreJ1_int, scoreRobot);
-        stage.show();
+        if (manche != 10) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
+            root = fxmlLoader.load();
+            MainControler controler = fxmlLoader.getController();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            controler.setEnsembleCouleurs(this.ensembleCouleurs);
+            controler.updateScore(scoreJ1_int, scoreRobot);
+            manche++;
+            controler.setManche(this.manche++);
+            stage.show();
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EndingView.fxml"));
+            root = fxmlLoader.load();
+            EndingControler controler = fxmlLoader.getController();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            controler.updateScore(this.scoreJ1_int, this.scoreRobot);
+            stage.show();
+        }
     }
 
-    @FXML
-    Button boutonQuitter;
 
     public void quitButton() {
         Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
@@ -166,7 +186,7 @@ public class BotControler {
                         }
                     }
                 }
-                if (Arrays.equals(nbBienMalPlace, MasterMindAlgo.nbBienMalPlaces(secretCode, intCode)) ) {
+                if (Arrays.equals(nbBienMalPlace, MasterMindAlgo.nbBienMalPlaces(secretCode, intCode))) {
                     HBox mainHbox = getRow();
                     GridPane gridPane = (GridPane) mainHbox.getChildren().get(2);
                     for (int i = 0; i < nbBienMalPlace[0]; i++) {
@@ -182,8 +202,7 @@ public class BotControler {
                     activeRow -= 2;
 
                     updateNewCode();
-                }
-                else System.out.println("not good");
+                } else System.out.println("not good");
 
             }
 
@@ -216,15 +235,6 @@ public class BotControler {
     }
 
 
-    //___________________________________________________________________
-
-    /**
-     * pré-requis : cod est une matrice, rep est une matrice à 2 colonnes, 0 <= nbCoups < cod.length
-     * et  nbCoups < rep.length
-     * résultat : vrai ssi cod[nbCoups] est compatible avec les nbCoups premières lignes de cod et de rep,
-     * c'est-à-dire que si cod[nbCoups] était le code secret, les réponses aux nbCoups premières
-     * propositions de cod seraient les nbCoups premières réponses de rep
-     */
     public boolean estCompat() {
         for (int i = 0; i < (16 - activeRow) / 2; i++) {
             int[] nbbienmalplacescodI = MasterMindAlgo.nbBienMalPlaces(cod[i], cod[(16 - activeRow) / 2]);
@@ -236,17 +246,6 @@ public class BotControler {
         return true;
     }
 
-    //___________________________________________________________________
-
-    /**
-     * pré-requis : cod est une matrice, rep est une matrice à 2 colonnes, 0 < nbCoups < cod.length
-     * et nbCoups < rep.length
-     * action : met dans cod[nbCoups] le plus petit code (selon l'ordre lexicographique dans l'ensemble
-     * des codes de longueur cod[0].length à valeurs de 0 à nbCouleurs-1) qui est à la fois plus grand que
-     * cod[nbCoups-1] selon cet ordre et compatible avec les nbCoups premières lignes de cod et de rep,
-     * si ce code existe
-     * résultat : vrai ssi l'action a pu être effectuée
-     */
     public boolean passePropSuivante() {
         int nbCoups = (16 - activeRow) / 2;
         cod[nbCoups] = Arrays.copyOf(cod[nbCoups - 1], 4);
@@ -264,18 +263,20 @@ public class BotControler {
             for (int i = 0; i < 4; i++) {
                 Circle circle = (Circle) getCircleHbox().getChildren().get(i);
                 circle.setFill(ensembleCouleurs.get(cod[(16 - activeRow) / 2][i]));
+                updateRowIDHighlight();
             }
             if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
                 System.out.println("GG");
+                if (manche == 10) {
+                    changerButton.setText("FIN !");
+                }
                 changerButton.setVisible(true);
                 validerButton.setVisible(false);
 
-                scoreJ1_int += 8 - activeRow/2 + 1;
+                scoreJ1_int += 8 - activeRow / 2 + 1;
                 canClick = false;
             } else if (activeRow <= 0) System.out.println("bot a atteint le max ?");
-            else updateRowIDHighlight();
-        }
-        else {
+        } else {
             canClick = false;
             changerButton.setVisible(true);
             validerButton.setVisible(false);

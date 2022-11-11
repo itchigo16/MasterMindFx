@@ -55,6 +55,15 @@ public class ChoisirCodeControler {
     @FXML
     Button boutonQuitter;
 
+    int manche;
+    @FXML
+    Label labelManche;
+
+    public void setManche(int manche) {
+        this.manche = manche;
+        labelManche.setText("manche numéro " + this.manche);
+    }
+
 
     public void setEnsembleCouleurs(HashMap<Integer, Paint> ensembleCouleurs) {
         this.ensembleCouleurs = ensembleCouleurs;
@@ -80,6 +89,7 @@ public class ChoisirCodeControler {
             controler.updateScore(scoreJ1_int, scoreRobot);
             controler.setSecretCode(getSecretCodeFromColors());
             controler.updateSecretCodeRow();
+            controler.setManche(this.manche);
             stage.show();
         }
 

@@ -16,6 +16,10 @@ Pane {
     -fx-background-radius: 20;
     -fx-text-fill: #FFD369;
 }
+.palette > .button:hover {
+    -fx-border-color: #FFD369;
+    -fx-border-radius: 30;
+}
 
 .bouton:hover {
     -fx-cursor: hand;

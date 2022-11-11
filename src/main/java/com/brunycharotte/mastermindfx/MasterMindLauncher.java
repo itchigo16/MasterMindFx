@@ -15,7 +15,7 @@ public class MasterMindLauncher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("MasterMind_FX.fxml"));
+        root = FXMLLoader.load(getClass().getResource("MenuView.fxml"));
         scene = new Scene(root);
         Image icon = new Image("/logo.png");
         stage.getIcons().add(icon);

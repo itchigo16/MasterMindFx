@@ -9,18 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="switch de toutes les scenes + choix du code secret">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/all_blury.css" afterDir="false" />
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MenuViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/EndingView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/icone_bot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MasterMindLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MasterMindLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/all_blury.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/all_blury.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/icone_bot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/icone_joueur.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/icone_joueur.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -56,24 +63,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kumai/.jdks/openjdk-19.0.1",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/jdk-18.0.1.1&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\java\com\brunycharotte\mastermindfx" />
+      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\resources\com\brunycharotte\mastermindfx" />
+      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.brunycharotte.mastermindfx.Main" />
       <module name="MasterMindFX_git" />
       <extension name="coverage">
@@ -112,6 +134,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MasterMindLauncher" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -134,7 +160,10 @@
       <workItem from="1668069259057" duration="777000" />
       <workItem from="1668075011311" duration="8798000" />
       <workItem from="1668097113325" duration="1650000" />
-      <workItem from="1668100785193" duration="1811000" />
+      <workItem from="1668100785193" duration="4026000" />
+      <workItem from="1668111812798" duration="1974000" />
+      <workItem from="1668160911276" duration="13170000" />
+      <workItem from="1668178818169" duration="5721000" />
     </task>
     <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
       <created>1667998158435</created>
@@ -150,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668003232343</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1668102800491</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668102800491</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +206,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="le boutton quitter sert vraiment mtn" />
     <MESSAGE value="switch de toutes les scenes + choix du code secret" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch de toutes les scenes + choix du code secret" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
