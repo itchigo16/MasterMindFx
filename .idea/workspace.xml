@@ -9,13 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="ils vont penser on a triché">
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="implementation de l'historique de manche">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/HistoriqueMancheSaver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/EndingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/EndingView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/TutoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/TutoView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
@@ -29,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -158,7 +162,9 @@
       <workItem from="1668160911276" duration="13170000" />
       <workItem from="1668178818169" duration="17368000" />
       <workItem from="1668200228818" duration="696000" />
-      <workItem from="1668241447833" duration="5643000" />
+      <workItem from="1668241447833" duration="5702000" />
+      <workItem from="1668249281600" duration="8113000" />
+      <workItem from="1668279066585" duration="4261000" />
     </task>
     <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
       <created>1667998158435</created>
@@ -195,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668200321441</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="implementation de l'historique de manche">
+      <created>1668247133584</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668247133584</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +231,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="menu" />
     <MESSAGE value="ils vont penser on a triché" />
-    <option name="LAST_COMMIT_MESSAGE" value="ils vont penser on a triché" />
+    <MESSAGE value="implementation de l'historique de manche" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementation de l'historique de manche" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

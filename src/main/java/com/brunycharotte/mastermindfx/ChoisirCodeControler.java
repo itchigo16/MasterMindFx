@@ -8,8 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -90,9 +92,30 @@ public class ChoisirCodeControler {
             controler.setSecretCode(getSecretCodeFromColors());
             controler.updateSecretCodeRow();
             controler.setManche(this.manche);
+            controler.updateManche(this.historiqueMancheSaver);
             stage.show();
         }
 
+    }
+
+    HistoriqueMancheSaver historiqueMancheSaver;
+    public void setHistoriqueMancheSaver(HistoriqueMancheSaver historiqueMancheSaver) {
+        this.historiqueMancheSaver = historiqueMancheSaver;
+    }
+
+    @FXML
+    Pane leavingPane;
+    @FXML
+    Pane gamePanel;
+
+    public void afficherQuitterMenu() {
+        gamePanel.setEffect(new GaussianBlur());
+        leavingPane.setVisible(true);
+    }
+
+    public void quitterQuitterMenu() {
+        gamePanel.setEffect(null);
+        leavingPane.setVisible(false);
     }
 
     private int[] getSecretCodeFromColors() {

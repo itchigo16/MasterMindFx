@@ -10,10 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.effect.GaussianBlur;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -27,7 +24,6 @@ public class BotControler {
     Parent root;
     Scene scene;
     Stage stage;
-    public int[] guessedCode = new int[4];
 
     int[][] cod = new int[9][4];
     int[][] rep = new int[9][2];
@@ -88,17 +84,51 @@ public class BotControler {
     }
 
     @FXML
-    Pane historiquePane;
+    Pane leavingPane;
+
+    public void afficherQuitterMenu() {
+        gamePanel.setEffect(new GaussianBlur());
+        leavingPane.setVisible(true);
+    }
+
+    public void quitterQuitterMenu() {
+        gamePanel.setEffect(null);
+        leavingPane.setVisible(false);
+    }
+
+    @FXML
+    Pane historiquePane1;
     @FXML
     Pane gamePanel;
     public void afficherHistorique() {
         gamePanel.setEffect(new GaussianBlur());
-        historiquePane.setVisible(true);
+        historiquePane1.setVisible(true);
     }
 
     public void enleverHistorique() {
         gamePanel.setEffect(null);
-        historiquePane.setVisible(false);
+        historiquePane1.setVisible(false);
+    }
+
+    HistoriqueMancheSaver historiqueMancheSaver;
+
+
+    public void updateManche(HistoriqueMancheSaver historiqueMancheSaver) {
+        this.historiqueMancheSaver = historiqueMancheSaver;
+        int index = 0;
+        while (historiqueMancheSaver.savePTS[index] != 0) {
+            index++;
+        }
+        for (int i = 0; i < index; i++) {
+            VBox historyBox = (VBox) historiquePane1.getChildren().get(0);
+            GridPane pane = (GridPane) historyBox.getChildren().get(i);
+            GridPane gridPane = (GridPane) pane.getChildren().get(1);
+            Label labelWinner = (Label) gridPane.getChildren().get(1);
+            Label labelPts = (Label) gridPane.getChildren().get(2);
+            labelWinner.setText("WINNER: " + historiqueMancheSaver.saveWinners[i]);
+            labelPts.setText("PTS gagnés: " + historiqueMancheSaver.savePTS[i]);
+        }
+
     }
 
 
@@ -114,6 +144,7 @@ public class BotControler {
             controler.updateScore(scoreJ1_int, scoreRobot);
             manche++;
             controler.setManche(this.manche++);
+            controler.updateManche(this.historiqueMancheSaver);
             stage.show();
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EndingView.fxml"));
@@ -123,6 +154,7 @@ public class BotControler {
             scene = new Scene(root);
             stage.setScene(scene);
             controler.updateScore(this.scoreJ1_int, this.scoreRobot);
+            controler.updateManche(this.historiqueMancheSaver);
             stage.show();
         }
     }
@@ -274,6 +306,8 @@ public class BotControler {
         return false;
     }
 
+    int ptsGagne;
+    String winner;
 
     private void updateNewCode() {
         if (passePropSuivante()) {
@@ -284,6 +318,7 @@ public class BotControler {
             }
             if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
                 System.out.println("GG");
+                winner = "JOUEUR";
                 if (manche == 10) {
                     changerButton.setText("FIN !");
                 }
@@ -291,14 +326,10 @@ public class BotControler {
                 validerButton.setVisible(false);
 
                 scoreJ1_int += 8 - activeRow / 2 + 1;
+                ptsGagne = 8 - activeRow / 2 + 1;
+                historiqueMancheSaver.setWinnerPts(manche, "ROBOT", ptsGagne);
                 canClick = false;
             } else if (activeRow <= 0) System.out.println("bot a atteint le max ?");
-        } else {
-            canClick = false;
-            changerButton.setVisible(true);
-            validerButton.setVisible(false);
-            // TODO: 09/11/2022 FAIRE LES TEXTES POUR EXPLIQUER CE QU'IL SE PASSE
-
         }
     }
 

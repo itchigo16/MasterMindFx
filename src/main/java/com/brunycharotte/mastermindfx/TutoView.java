@@ -48,6 +48,7 @@ public class TutoView {
             stage.setScene(scene);
             controler.setManche(1);
             controler.updateScore(0, 0);
+            controler.setHistoriqueMancheSaver(new HistoriqueMancheSaver());
             stage.show();
         }
     }

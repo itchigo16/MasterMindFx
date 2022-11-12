@@ -9,10 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -75,7 +72,30 @@ public class MainControler {
     int manche = 9;
     @FXML
     Label labelManche;
+    HistoriqueMancheSaver historiqueMancheSaver;
 
+
+    public void updateManche(HistoriqueMancheSaver historiqueMancheSaver) {
+        this.historiqueMancheSaver = historiqueMancheSaver;
+        int index = 0;
+        while (historiqueMancheSaver.savePTS[index] != 0) {
+            index++;
+        }
+        for (int i = 0; i < index; i++) {
+            VBox historyBox = (VBox) historiquePane1.getChildren().get(0);
+            GridPane pane = (GridPane) historyBox.getChildren().get(i);
+            GridPane gridPane = (GridPane) pane.getChildren().get(1);
+            Label labelWinner = (Label) gridPane.getChildren().get(1);
+            Label labelPts = (Label) gridPane.getChildren().get(2);
+            labelWinner.setText("WINNER: " + historiqueMancheSaver.saveWinners[i]);
+            labelPts.setText("PTS gagnés: " + historiqueMancheSaver.savePTS[i]);
+        }
+
+    }
+
+    public void setHistoriqueMancheSaver(HistoriqueMancheSaver historiqueMancheSaver) {
+        this.historiqueMancheSaver = historiqueMancheSaver;
+    }
 
     public void setManche(int manche) {
         this.manche = manche;
@@ -101,6 +121,7 @@ public class MainControler {
         controler.updateScore(scoreJ1_int, scoreRobot);
         manche++;
         controler.setManche(this.manche++);
+        controler.setHistoriqueMancheSaver(this.historiqueMancheSaver);
         stage.show();
     }
 
@@ -169,17 +190,19 @@ public class MainControler {
     }
 
     @FXML
-    Pane historiquePane;
+    Pane historiquePane1;
     @FXML
     Pane logoJoueurCourant;
+
+
     public void afficherHistorique() {
         logoJoueurCourant.setEffect(new GaussianBlur());
-        historiquePane.setVisible(true);
+        historiquePane1.setVisible(true);
     }
 
     public void enleverHistorique() {
         logoJoueurCourant.setEffect(null);
-        historiquePane.setVisible(false);
+        historiquePane1.setVisible(false);
     }
 
 
@@ -224,8 +247,10 @@ public class MainControler {
                     canClick = false;
                     validerButton.setVisible(false);
                     changerButton.setVisible(true);
-
-                    scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
+                    ptsGagne = Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
+                    scoreRobot += ptsGagne;
+                    winnerRound = "JOUEUR";
+                    historiqueMancheSaver.setWinnerPts(this.manche, "JOUEUR", ptsGagne);
                 } else if (activeRow > 1) {
                     updateRowIDHighlight();
                     activeRow -= 2;
@@ -233,8 +258,10 @@ public class MainControler {
                 else { // LOSE SI MANCHE FINIS
                     int[] nbBienMalPlaces = MasterMindAlgo.nbBienMalPlaces(secretCode, intCode);
 
-                    scoreRobot += Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "");
-                    scoreRobot += nbBienMalPlaces[1] + 2 * (intCode.length - (nbBienMalPlaces[0] + nbBienMalPlaces[1]));
+                    ptsGagne = Integer.parseInt(((Label) ((HBox) plateau.getChildren().get(activeRow)).getChildren().get(0)).getText().charAt(0) + "") +nbBienMalPlaces[1] + 2 * (intCode.length - (nbBienMalPlaces[0] + nbBienMalPlaces[1]));
+                    historiqueMancheSaver.setWinnerPts(this.manche, "ROBOT", ptsGagne);
+                    scoreRobot += ptsGagne;
+                    winnerRound = "ROBOT";
 
                     // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
                     setSecretCodeLabel();
@@ -249,6 +276,9 @@ public class MainControler {
         }
     }
 
+    int ptsGagne;
+    String winnerRound;
+
     private void setSecretCodeLabel() {
         Paint[] code = intToPaintCode();
         HBox hBox = (HBox) secretCodeLabel.getChildrenUnmodifiable().get(0);
@@ -257,6 +287,20 @@ public class MainControler {
             circle.setFill(code[i]);
         }
     }
+
+    @FXML
+    Pane leavingPane;
+
+    public void afficherQuitterMenu() {
+        logoJoueurCourant.setEffect(new GaussianBlur());
+        leavingPane.setVisible(true);
+    }
+
+    public void quitterQuitterMenu() {
+        logoJoueurCourant.setEffect(null);
+        leavingPane.setVisible(false);
+    }
+
 
     private Paint[] intToPaintCode() {
         Paint[] paints = new Paint[4];

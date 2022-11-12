@@ -39,6 +39,22 @@ Pane {
     -fx-border-radius: 10;
 }
 
+#leavingPanel {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-background-color: #393E46;
+    -fx-background-radius: 20;
+    -fx-padding: 5px;
+}
+
+#leavingPanel > .label {
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+}
+
+#yesLeave {
+    -fx-text-fill: #EC625F;
+}
+
 
 .button:hover {
     -fx-cursor: hand;

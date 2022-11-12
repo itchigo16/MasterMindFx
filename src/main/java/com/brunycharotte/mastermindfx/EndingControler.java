@@ -9,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -62,18 +64,35 @@ public class EndingControler {
         stage1.close();
     }
 
+    HistoriqueMancheSaver historiqueMancheSaver;
+
+
+    public void updateManche(HistoriqueMancheSaver historiqueMancheSaver) {
+        this.historiqueMancheSaver = historiqueMancheSaver;
+        for (int i = 0; i < 10; i++) {
+            VBox historyBox = (VBox) historiquePane1.getChildren().get(0);
+            GridPane pane = (GridPane) historyBox.getChildren().get(i);
+            GridPane gridPane = (GridPane) pane.getChildren().get(1);
+            Label labelWinner = (Label) gridPane.getChildren().get(1);
+            Label labelPts = (Label) gridPane.getChildren().get(2);
+            labelWinner.setText("WINNER: " + historiqueMancheSaver.saveWinners[i]);
+            labelPts.setText("PTS gagnés: " + historiqueMancheSaver.savePTS[i]);
+        }
+
+    }
+
     @FXML
-    Pane historiquePane;
+    Pane historiquePane1;
     @FXML
     Pane gamePanel;
     public void afficherHistorique() {
         gamePanel.setEffect(new GaussianBlur());
-        historiquePane.setVisible(true);
+        historiquePane1.setVisible(true);
     }
 
     public void enleverHistorique() {
         gamePanel.setEffect(null);
-        historiquePane.setVisible(false);
+        historiquePane1.setVisible(false);
     }
 
 
