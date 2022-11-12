@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -59,6 +61,21 @@ public class EndingControler {
         Stage stage1 = (Stage) boutonQuitter.getScene().getWindow();
         stage1.close();
     }
+
+    @FXML
+    Pane historiquePane;
+    @FXML
+    Pane gamePanel;
+    public void afficherHistorique() {
+        gamePanel.setEffect(new GaussianBlur());
+        historiquePane.setVisible(true);
+    }
+
+    public void enleverHistorique() {
+        gamePanel.setEffect(null);
+        historiquePane.setVisible(false);
+    }
+
 
 
 }

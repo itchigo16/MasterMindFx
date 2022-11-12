@@ -8,8 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -70,7 +72,7 @@ public class MainControler {
     Scene scene;
     Stage stage;
 
-    int manche = 1;
+    int manche = 9;
     @FXML
     Label labelManche;
 
@@ -164,6 +166,20 @@ public class MainControler {
             }
         }
         return -1;
+    }
+
+    @FXML
+    Pane historiquePane;
+    @FXML
+    Pane logoJoueurCourant;
+    public void afficherHistorique() {
+        logoJoueurCourant.setEffect(new GaussianBlur());
+        historiquePane.setVisible(true);
+    }
+
+    public void enleverHistorique() {
+        logoJoueurCourant.setEffect(null);
+        historiquePane.setVisible(false);
     }
 
 

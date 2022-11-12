@@ -9,8 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -84,6 +86,21 @@ public class BotControler {
         this.scoreJoueur.setText(scoreJ1_int + "");
         this.scoreBot.setText(scoreRobot + "");
     }
+
+    @FXML
+    Pane historiquePane;
+    @FXML
+    Pane gamePanel;
+    public void afficherHistorique() {
+        gamePanel.setEffect(new GaussianBlur());
+        historiquePane.setVisible(true);
+    }
+
+    public void enleverHistorique() {
+        gamePanel.setEffect(null);
+        historiquePane.setVisible(false);
+    }
+
 
     public void switchToHuman(ActionEvent event) throws IOException {
         if (manche != 10) {

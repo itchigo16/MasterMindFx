@@ -520,6 +520,7 @@
             <GaussianBlur />
          </effect>
       </Pane>
+      <Pane prefHeight="588.0" prefWidth="900.0" style="-fx-background-color: trasnparent;" />
       <Pane id="mainPanel" layoutX="124.0" layoutY="50.0" prefHeight="488.0" prefWidth="652.0">
          <children>
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="122.0" prefWidth="598.0" text="Bienvenue  dans le MasterMind, voici un petit tuto pour comprendre les bases du jeu" textAlignment="CENTER" wrapText="true" />
