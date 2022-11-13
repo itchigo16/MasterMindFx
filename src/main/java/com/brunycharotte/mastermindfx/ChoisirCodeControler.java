@@ -87,12 +87,12 @@ public class ChoisirCodeControler {
             scene = new Scene(root);
             stage.setScene(scene);
             controler.setEnsembleCouleurs(this.ensembleCouleurs);
-            controler.putFirstCode();
             controler.updateScore(scoreJ1_int, scoreRobot);
             controler.setSecretCode(getSecretCodeFromColors());
             controler.updateSecretCodeRow();
             controler.setManche(this.manche);
             controler.updateManche(this.historiqueMancheSaver);
+            controler.putFirstCode();
             stage.show();
         }
 

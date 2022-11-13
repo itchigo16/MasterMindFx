@@ -134,8 +134,9 @@ public class BotControler {
 
 
     public void switchToHuman(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader;
         if (manche != 10) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
             root = fxmlLoader.load();
             MainControler controler = fxmlLoader.getController();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -146,9 +147,8 @@ public class BotControler {
             manche++;
             controler.setManche(this.manche++);
             controler.updateManche(this.historiqueMancheSaver);
-            stage.show();
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EndingView.fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("EndingView.fxml"));
             root = fxmlLoader.load();
             EndingControler controler = fxmlLoader.getController();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -156,8 +156,8 @@ public class BotControler {
             stage.setScene(scene);
             controler.updateScore(this.scoreJ1_int, this.scoreRobot);
             controler.updateManche(this.historiqueMancheSaver);
-            stage.show();
         }
+        stage.show();
     }
 
 
@@ -193,6 +193,8 @@ public class BotControler {
             Circle circle = (Circle) firstCode.getChildren().get(i);
             circle.setFill(ensembleCouleurs.get(0));
         }
+        System.out.println(activeRow);
+        aGagne();
     }
 
     private void updateRowIDHighlight() {
@@ -248,8 +250,6 @@ public class BotControler {
                     rep[(16 - activeRow) / 2] = nbBienMalPlace;
 
                     cod[(16 - activeRow) / 2] = intCode;
-
-                    activeRow -= 2;
 
                     updateNewCode();
                 } else System.out.println("not good");
@@ -311,26 +311,45 @@ public class BotControler {
     String winner;
 
     private void updateNewCode() {
-        if (passePropSuivante()) {
+        activeRow -= 2;
+        if (activeRow < 0) {// si le bot arrive a la fin de ses essaies ( c'est jamais arrivé a moins de glitch)
+            activeRow+= 2; //just pour recup les bons bien mal place
+            canClick = false;
+            changerButton.setVisible(true);
+            validerButton.setVisible(false);
+            // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
+            int bienPlace = rep[8 - activeRow/2][0];
+            System.out.println(bienPlace);
+            int malPlace = rep[8 - activeRow/2][1];
+            int malus = malPlace + 2 * (4 - (bienPlace + malPlace));
+            ptsGagne = 8 - activeRow / 2 + 1 + malus;
+            scoreJ1_int += ptsGagne;
+            historiqueMancheSaver.setWinnerPts(manche, "JOUEUR", ptsGagne);
+        }
+        else if (passePropSuivante()) {
             for (int i = 0; i < 4; i++) {
                 Circle circle = (Circle) getCircleHbox().getChildren().get(i);
                 circle.setFill(ensembleCouleurs.get(cod[(16 - activeRow) / 2][i]));
                 updateRowIDHighlight();
             }
-            if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
-                System.out.println("GG");
-                winner = "JOUEUR";
-                if (manche == 10) {
-                    changerButton.setText("FIN !");
-                }
-                changerButton.setVisible(true);
-                validerButton.setVisible(false);
+            aGagne();
+        }
+    }
 
-                scoreJ1_int += 8 - activeRow / 2 + 1;
-                ptsGagne = 8 - activeRow / 2 + 1;
-                historiqueMancheSaver.setWinnerPts(manche, "ROBOT", ptsGagne);
-                canClick = false;
-            } else if (activeRow <= 0) System.out.println("bot a atteint le max ?");
+    private void aGagne() {
+        if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
+            System.out.println("GG");
+            winner = "JOUEUR";
+            if (manche == 10) {
+                changerButton.setText("FIN !");
+            }
+            changerButton.setVisible(true);
+            validerButton.setVisible(false);
+
+            scoreJ1_int += 8 - activeRow / 2 + 1;
+            ptsGagne = 8 - activeRow / 2 + 1;
+            historiqueMancheSaver.setWinnerPts(manche, "ROBOT", ptsGagne);
+            canClick = false;
         }
     }
 

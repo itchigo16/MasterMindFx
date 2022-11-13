@@ -33,9 +33,13 @@ public class EndingControler {
     public void restart(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
         root = fxmlLoader.load();
+        MainControler controler = fxmlLoader.getController();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        controler.setManche(1);
+        controler.updateScore(0, 0);
+        controler.setHistoriqueMancheSaver(new HistoriqueMancheSaver());
         stage.show();
     }
 
