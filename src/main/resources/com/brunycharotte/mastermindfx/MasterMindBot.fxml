@@ -504,7 +504,7 @@
                   <Font name="Agency FB Bold" size="30.0" />
                </font>
             </Button>
-            <Label id="instruction" alignment="CENTER" layoutX="38.0" layoutY="186.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="A toi de décoder !">
+            <Label id="instruction" alignment="CENTER" layoutX="38.0" layoutY="186.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="A toi de coder !">
                <font>
                   <Font name="Agency FB" size="36.0" />
                </font>
