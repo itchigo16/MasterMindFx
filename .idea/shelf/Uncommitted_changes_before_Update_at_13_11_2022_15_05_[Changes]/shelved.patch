@@ -1,0 +1,224 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,40 +1,25 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ArtifactsWorkspaceSettings">
+-    <artifacts-to-build>
+-      <artifact name="MasterMindFX_git:jar" />
+-    </artifacts-to-build>
+-  </component>
+   <component name="AutoImportSettings">
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="bouton quitter, historique fonctionnel">
++    <list default="true" id="514063e8-1230-4f8a-b7ff-a9d626161436" name="Changes" comment="rajout malus et level (pas du tout fini les levels ça marche pas encore)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/EndingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/EndingView.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindBot.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPickCode.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/TutoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/TutoView.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMind_FX.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MasterMindPlayer.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="CSS File" />
+-        <option value="FxmlFile" />
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="RESET_MODE" value="HARD" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -55,51 +40,15 @@
+   </component>
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/jdk-19&quot;,
+-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+ }</component>
+-  <component name="RecentsManager">
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\resources" />
+-      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src" />
+-      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\java" />
+-      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\java\com\brunycharotte\mastermindfx" />
+-      <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\resources\com\brunycharotte\mastermindfx" />
+-    </key>
+-  </component>
+-  <component name="RunManager" selected="Application.Main">
+-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+-      <option name="MAIN_CLASS_NAME" value="com.brunycharotte.mastermindfx.Main" />
+-      <module name="MasterMindFX_git" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.brunycharotte.mastermindfx.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="RunManager">
+     <configuration name="MasterMindLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-19" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+@@ -126,13 +75,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <list>
+-      <item itemvalue="Application.Main" />
+-      <item itemvalue="Application.MasterMindLauncher" />
+-    </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.Main" />
+         <item itemvalue="Application.MasterMindLauncher" />
+       </list>
+     </recent_temporary>
+@@ -140,70 +84,17 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="switch de toutes les scenes + choix du code secret" />
++      <changelist id="514063e8-1230-4f8a-b7ff-a9d626161436" name="Changes" comment="" />
+       <created>1667927925841</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1667927925841</updated>
+       <workItem from="1667927926984" duration="1000" />
+       <workItem from="1667994124705" duration="1439000" />
+-      <workItem from="1668011041551" duration="67000" />
+-      <workItem from="1668011862088" duration="6006000" />
+-      <workItem from="1668069259057" duration="777000" />
+-      <workItem from="1668075011311" duration="8798000" />
+-      <workItem from="1668097113325" duration="1650000" />
+-      <workItem from="1668100785193" duration="4026000" />
+-      <workItem from="1668111812798" duration="1974000" />
+-      <workItem from="1668160911276" duration="13170000" />
+-      <workItem from="1668178818169" duration="17368000" />
+-      <workItem from="1668200228818" duration="696000" />
+-      <workItem from="1668241447833" duration="5702000" />
+-      <workItem from="1668249281600" duration="8113000" />
+-      <workItem from="1668279066585" duration="4261000" />
+-    </task>
+-    <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
+-      <created>1667998158435</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1667998158435</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="switch de toutes les scenes + choix du code secret">
+-      <created>1668003232343</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1668003232343</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="update">
+-      <created>1668102800491</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1668102800491</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="menu">
+-      <created>1668187208006</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1668187208006</updated>
++      <workItem from="1668347450184" duration="69000" />
++      <workItem from="1668347521204" duration="19000" />
++      <workItem from="1668347777535" duration="541000" />
+     </task>
+-    <task id="LOCAL-00005" summary="ils vont penser on a triché">
+-      <created>1668200321441</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1668200321441</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="implementation de l'historique de manche">
+-      <created>1668247133584</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1668247133584</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -220,23 +111,4 @@
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="le boutton quitter sert vraiment mtn" />
+-    <MESSAGE value="switch de toutes les scenes + choix du code secret" />
+-    <MESSAGE value="update" />
+-    <MESSAGE value="menu" />
+-    <MESSAGE value="ils vont penser on a triché" />
+-    <MESSAGE value="implementation de l'historique de manche" />
+-    <option name="LAST_COMMIT_MESSAGE" value="implementation de l'historique de manche" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <breakpoint enabled="true" type="java-exception">
+-          <properties class="java.lang.RuntimeException" package="java.lang" />
+-          <option name="timeStamp" value="4" />
+-        </breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+ </project>
+\ No newline at end of file

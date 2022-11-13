@@ -31,7 +31,7 @@ public class EndingControler {
     Stage stage;
 
     public void restart(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
         root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

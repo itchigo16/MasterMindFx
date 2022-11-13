@@ -1,0 +1,83 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"514063e8-1230-4f8a-b7ff-a9d626161436\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HH2w1bCukLluWuHjgb56jez7Ca\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MasterMindLauncher\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-19\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.brunycharotte.mastermindfx.MasterMindLauncher\" />\r\n      <module name=\"MasterMindFX_git\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.brunycharotte.mastermindfx.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MasterMindLauncher\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"514063e8-1230-4f8a-b7ff-a9d626161436\" name=\"Changes\" comment=\"\" />\r\n      <created>1667927925841</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1667927925841</updated>\r\n      <workItem from=\"1667927926984\" duration=\"1000\" />\r\n      <workItem from=\"1667994124705\" duration=\"1439000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e4dcb3a6da7de2d76948def28160bc00e9cac1d6)
++++ b/.idea/workspace.xml	(date 1668342343076)
+@@ -4,11 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="514063e8-1230-4f8a-b7ff-a9d626161436" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="514063e8-1230-4f8a-b7ff-a9d626161436" name="Changes" comment="rajout malus et level (pas du tout fini les levels ça marche pas encore)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,7 +22,6 @@
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+         <option name="mavenHome" value="Use Maven wrapper" />
+-        <option name="useMavenConfig" value="true" />
+       </MavenGeneralSettings>
+     </option>
+   </component>
+@@ -35,16 +31,10 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+-  }
+-}</component>
++  <component name="PropertiesComponent">
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++  </component>
+   <component name="RunManager">
+     <configuration name="MasterMindLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-19" />
+@@ -87,8 +77,17 @@
+       <option name="presentableId" value="Default" />
+       <updated>1667927925841</updated>
+       <workItem from="1667927926984" duration="1000" />
+-      <workItem from="1667994124705" duration="1439000" />
++      <workItem from="1667994124705" duration="2118000" />
++      <workItem from="1668086319666" duration="14000" />
+     </task>
++    <task id="LOCAL-00001" summary="rajout malus et level (pas du tout fini les levels ça marche pas encore)">
++      <created>1667995600959</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1667995600959</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -104,5 +103,10 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="rajout malus et level (pas du tout fini les levels ça marche pas encore)" />
++    <option name="LAST_COMMIT_MESSAGE" value="rajout malus et level (pas du tout fini les levels ça marche pas encore)" />
+   </component>
+ </project>
+\ No newline at end of file

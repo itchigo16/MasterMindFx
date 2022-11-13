@@ -27,9 +27,9 @@ public class TutoView {
     Button suivant;
 
 
-    Image humainDecodeur = new Image(getClass().getResourceAsStream("/humainDecodeur.png"));
-    Image choisisCode = new Image(getClass().getResourceAsStream("/choisisCode.png"));
-    Image robotDecodeur = new Image(getClass().getResourceAsStream("/robotDecodeur.png"));
+    Image humainDecodeur = new Image(getClass().getResourceAsStream("/humainDecodeur.jpg"));
+    Image choisisCode = new Image(getClass().getResourceAsStream("/choisisCode.jpg"));
+    Image robotDecodeur = new Image(getClass().getResourceAsStream("/robotDecodeur.jpg"));
     Image finManche = new Image(getClass().getResourceAsStream("/finManche.png"));
     Image[] images = {humainDecodeur, choisisCode, robotDecodeur, finManche};
 
@@ -40,7 +40,7 @@ public class TutoView {
             displayedImage.setImage(images[indexImage]);
         }
         else {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
             root = fxmlLoader.load();
             MainControler controler = fxmlLoader.getController();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,7 +62,7 @@ public class TutoView {
     }
 
     public void onPlay(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
         root = fxmlLoader.load();
         MainControler controler = fxmlLoader.getController();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
