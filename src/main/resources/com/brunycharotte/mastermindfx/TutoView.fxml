@@ -404,82 +404,11 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </VBox>
-            <GridPane alignment="CENTER" layoutX="49.0" layoutY="396.0" prefHeight="91.0" prefWidth="192.0" styleClass="labelScore">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.20001220703125" minWidth="10.0" prefWidth="101.799951171875" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.79998779296875" minWidth="0.0" prefWidth="27.400048828124994" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="101.20003662109377" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints />
-                  <RowConstraints />
-                  <RowConstraints maxHeight="22.399993896484375" minHeight="0.0" prefHeight="0.0" />
-                  <RowConstraints maxHeight="82.4" minHeight="0.0" prefHeight="78.4" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <children>
-                  <Label fx:id="scoreJoueur" style="-fx-border-color: white;" styleClass="labelScore" text="0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <padding>
-                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
-                     </padding>
-                     <font>
-                        <Font name="Agency FB Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                  <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;" styleClass="labelScore" text="0" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                     <padding>
-                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
-                     </padding>
-                     <font>
-                        <Font name="Agency FB Bold" size="25.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <Label fx:id="nomBot" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="BOT" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="Agency FB Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nomJoueur" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="JOUEUR" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font name="Agency FB Bold" size="25.0" />
-                     </font>
-                  </Label>
-               </children>
-            </GridPane>
-            <ImageView id="logo" fitHeight="192.0" fitWidth="192.0" layoutX="47.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo.png" />
-               </image>
-            </ImageView>
             <Button id="boutonQuitter" fx:id="boutonQuitter" alignment="CENTER" layoutX="681.0" layoutY="499.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Quitter la partie">
                <font>
                   <Font name="Agency FB Bold" size="30.0" />
                </font>
             </Button>
-            <Button id="boutonHistorique" fx:id="boutonHistorique" alignment="CENTER" layoutX="27.0" layoutY="499.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="237.0" styleClass="bouton" stylesheets="@style.css" text="Historique des manches">
-               <font>
-                  <Font name="Agency FB Bold" size="30.0" />
-               </font>
-            </Button>
-            <Label id="instruction" alignment="CENTER" layoutX="49.0" layoutY="317.0" prefHeight="57.0" prefWidth="192.0" styleClass="labelGauche" text="A toi de décoder !">
-               <font>
-                  <Font name="Agency FB" size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelManche" alignment="CENTER" layoutX="49.0" layoutY="250.0" prefHeight="52.0" prefWidth="192.0" styleClass="labelManche" text="Manche numéro 1">
-               <font>
-                  <Font name="Agency FB" size="28.0" />
-               </font>
-            </Label>
             <Button id="boutonEffacer" layoutX="681.0" layoutY="367.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
                <font>
                   <Font name="Agency FB" size="12.0" />
@@ -510,9 +439,75 @@
                   <Font name="Agency FB" size="12.0" />
                </font>
             </Button>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="118.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+            <Label id="instruction" fx:id="labelManche" alignment="CENTER" layoutX="24.0" layoutY="78.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="Manche 1">
+               <font>
+                  <Font name="Agency FB" size="36.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" layoutX="24.0" layoutY="314.0" prefHeight="137.0" prefWidth="237.0" styleClass="labelScore">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.20001220703125" minWidth="10.0" prefWidth="101.799951171875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.79998779296875" minWidth="0.0" prefWidth="27.400048828124994" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="101.20003662109377" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints maxHeight="22.399993896484375" minHeight="0.0" prefHeight="0.0" />
+                  <RowConstraints maxHeight="82.4" minHeight="0.0" prefHeight="78.4" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label fx:id="scoreJoueur" style="-fx-border-color: white;" styleClass="labelScore" text="24" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;" styleClass="labelScore" text="36" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="nomBot" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="BOT" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomJoueur" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="JOUEUR" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button id="boutonHistorique" fx:id="boutonHistorique" alignment="CENTER" layoutX="24.0" layoutY="478.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="237.0" styleClass="bouton" stylesheets="@style.css" text="Historique des manches">
+               <font>
+                  <Font name="Agency FB Bold" size="30.0" />
+               </font>
+            </Button>
+            <Label id="instruction" alignment="CENTER" layoutX="24.0" layoutY="201.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="A toi de décoder !">
+               <font>
+                  <Font name="Agency FB" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="118.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icone_joueur.png" />
+                  <Image url="@icone_bot.png" />
                </image>
             </ImageView>
          </children>
@@ -520,7 +515,6 @@
             <GaussianBlur />
          </effect>
       </Pane>
-      <Pane prefHeight="588.0" prefWidth="900.0" style="-fx-background-color: transparent;" />
       <Pane id="mainPanel" layoutX="124.0" layoutY="50.0" prefHeight="488.0" prefWidth="652.0">
          <children>
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="122.0" prefWidth="598.0" text="Bienvenue  dans le MasterMind, voici un petit tuto pour comprendre les bases du jeu" textAlignment="CENTER" wrapText="true" />

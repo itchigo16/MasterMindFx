@@ -139,7 +139,7 @@ Pane {
 }
 
 .labelGauche {
-    -fx-font-size: 15;
+    -fx-font-size: 25px;
 }
 
 Pane > .labelScore {
@@ -149,14 +149,13 @@ Pane > .labelScore {
 Pane > .labelScore > .labelScore {
     -fx-border-radius: 15;
     -fx-border-width: 2;
-    -fx-font-size: 20px;
+    -fx-font-size: 25px;
 }
 
 .labelScore {
     -fx-background-radius: 20;
     -fx-text-: "arcade";
     -fx-text-fill: #EEEEEE;
-    -fx-font-size: 26;
 }
 
 .sliderBienPlaces {
