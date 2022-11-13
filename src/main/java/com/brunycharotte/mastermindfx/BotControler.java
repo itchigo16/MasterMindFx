@@ -132,6 +132,7 @@ public class BotControler {
     }
 
 
+
     public void switchToHuman(ActionEvent event) throws IOException {
         if (manche != 10) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMind_FX.fxml"));
