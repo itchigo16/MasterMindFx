@@ -20,7 +20,7 @@
             <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="122.0" prefWidth="598.0" text="Bienvenue dans le MasterMind, voici un petit tuto pour comprendre les bases du jeu" textAlignment="CENTER" wrapText="true" />
             <ImageView fx:id="displayedImage" fitHeight="285.0" fitWidth="379.0" layoutX="134.0" layoutY="144.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../humainDecodeur.png" />
+                  <Image url="@../../../humainDecodeur.jpg" />
                </image>
             </ImageView>
             <Button fx:id="suivant" layoutX="524.0" layoutY="251.0" mnemonicParsing="false" onAction="#onClickSuivant" prefHeight="57.0" prefWidth="114.0" styleClass="bouton" text="Suivant" />

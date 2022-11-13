@@ -1,22 +1,513 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <Pane id="scene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#setBackgroundRandom" prefHeight="588.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunycharotte.mastermindfx.MenuViewController">
     <children>
-      <ImageView fitHeight="598.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@playerFlooted.jpg" />
-         </image>
-         <effect>
-            <GaussianBlur />
-         </effect>
-      </ImageView>
+        <Pane id="scene" fx:id="logoJoueurCourant" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="900.0" styleClass="paneScene" stylesheets="@all_blury.css">
+            <children>
+                <VBox id="plateauVbox" fx:id="plateau" layoutX="287.0" layoutY="78.0" prefHeight="483.0" prefWidth="352.0" spacing="4.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                    <children>
+                        <HBox id="coup9" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="9." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup8" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="8." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup7" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="7." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup6" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="6." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup5" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="5." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="WHITE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup4" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="4." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="BLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="RED" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="LIME" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="#80007f" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup3" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="3." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle id="c1" fill="#f1f100" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle id="c1" fill="#f1f100" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle id="c1" fill="#f1f100" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle id="c1" fill="#f1f100" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup2" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0" style="-fx-background-color: transparent;">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label text="2." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox id="hbox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle id="c1" fill="#f1f100" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="#80007f" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="RED" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="BLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                        <Line endX="209.5" fill="WHITE" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+                        <HBox id="coup1" alignment="CENTER" prefHeight="31.0" prefWidth="123.0" spacing="9.0">
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <children>
+                                <Label id="gros" text="1." textFill="WHITE">
+                                    <font>
+                                        <Font name="Agency FB" size="26.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                    <children>
+                                        <Circle fill="RED" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="LIME" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="BLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                        <Circle fill="RED" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    </children>
+                                </HBox>
+                                <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.39996337890625" minWidth="10.0" prefWidth="15.79998779296875" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints maxHeight="15.600012207031247" minHeight="8.399999999999999" prefHeight="14.000006103515622" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                        <Circle fill="WHITE" radius="5.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <Button id="boutonQuitter" alignment="CENTER" layoutX="38.0" layoutY="509.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="237.0" styleClass="bouton" stylesheets="@style.css" text="Quitter la partie">
+                    <font>
+                        <Font name="Agency FB Bold" size="30.0" />
+                    </font>
+                </Button>
+                <Button id="boutonEffacer" layoutX="655.0" layoutY="432.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Effacer">
+                    <font>
+                        <Font name="Agency FB" size="12.0" />
+                    </font>
+                </Button>
+                <Button id="boutonValider" fx:id="validerButton" layoutX="655.0" layoutY="509.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Valider">
+                    <font>
+                        <Font name="Agency FB" size="12.0" />
+                    </font>
+                </Button>
+                <Pane id="palette" fx:id="palette1" layoutX="655.0" layoutY="89.0" prefHeight="323.0" prefWidth="192.0" styleClass="palette">
+                    <children>
+                        <Label alignment="CENTER" layoutX="16.0" prefHeight="50.0" prefWidth="150.0" styleClass="labelDroite" stylesheets="@style.css" text="Palette de couleur" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Agency FB" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="rouge" layoutX="115.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: red;" />
+                        <Button fx:id="yellow" layoutX="115.0" layoutY="227.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: yellow;" />
+                        <Button fx:id="vert" layoutX="24.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="30.0" style="-fx-background-radius: 30; -fx-background-color: green;" />
+                        <Button fx:id="bleu" layoutX="24.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: blue;" />
+                        <Button fx:id="orange" layoutX="24.0" layoutY="227.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: orange;" />
+                        <Button fx:id="violet" layoutX="115.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="53.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="53.0" style="-fx-background-radius: 30; -fx-background-color: purple;" />
+                    </children>
+                </Pane>
+                <Button fx:id="changerButton" layoutX="681.0" layoutY="433.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="192.0" styleClass="bouton" stylesheets="@style.css" text="Prochaine Manche" visible="false">
+                    <font>
+                        <Font name="Agency FB" size="12.0" />
+                    </font>
+                </Button>
+            <Label id="instruction" fx:id="labelManche" alignment="CENTER" layoutX="38.0" layoutY="96.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="Manche 1">
+               <font>
+                  <Font name="Agency FB" size="36.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" layoutX="38.0" layoutY="278.0" prefHeight="137.0" prefWidth="237.0" styleClass="labelScore">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.20001220703125" minWidth="10.0" prefWidth="101.799951171875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.79998779296875" minWidth="0.0" prefWidth="27.400048828124994" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="101.20003662109377" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints maxHeight="22.399993896484375" minHeight="0.0" prefHeight="0.0" />
+                  <RowConstraints maxHeight="82.4" minHeight="0.0" prefHeight="78.4" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label fx:id="scoreJoueur" style="-fx-border-color: white;" styleClass="labelScore" text="24" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label styleClass="labelScore" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label fx:id="scoreBot" alignment="CENTER" style="-fx-border-color: white;" styleClass="labelScore" text="36" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="nomBot" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="BOT" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nomJoueur" alignment="CENTER" prefHeight="18.0" prefWidth="158.0" styleClass="labelScore" text="JOUEUR" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button id="boutonHistorique" fx:id="boutonHistorique" alignment="CENTER" layoutX="38.0" layoutY="432.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="237.0" styleClass="bouton" stylesheets="@style.css" text="Historique des manches">
+               <font>
+                  <Font name="Agency FB Bold" size="30.0" />
+               </font>
+            </Button>
+            <Label id="instruction" alignment="CENTER" layoutX="38.0" layoutY="186.0" prefHeight="85.0" prefWidth="237.0" styleClass="labelGauche" text="A toi de décoder !">
+               <font>
+                  <Font name="Agency FB" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="132.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icone_bot.png" />
+               </image>
+            </ImageView>
+            </children>
+            <effect>
+                <GaussianBlur />
+            </effect>
+        </Pane>
         <Pane id="menuForegroundPane" prefHeight="588.0" prefWidth="900.0" stylesheets="@style.css">
             <children>
                 <Button id="start" layoutX="364.0" layoutY="166.0" mnemonicParsing="false" onAction="#onPlay" prefHeight="100.0" prefWidth="200.0" stylesheets="@style.css" text="JOUER">
