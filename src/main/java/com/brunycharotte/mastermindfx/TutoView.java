@@ -30,7 +30,7 @@ public class TutoView {
     Image humainDecodeur = new Image(getClass().getResourceAsStream("/humainDecodeur.jpg"));
     Image choisisCode = new Image(getClass().getResourceAsStream("/choisisCode.jpg"));
     Image robotDecodeur = new Image(getClass().getResourceAsStream("/robotDecodeur.jpg"));
-    Image finManche = new Image(getClass().getResourceAsStream("/finManche.png"));
+    Image finManche = new Image(getClass().getResourceAsStream("/finManche.jpg"));
     Image[] images = {humainDecodeur, choisisCode, robotDecodeur, finManche};
 
     public void onClickSuivant(ActionEvent event) throws IOException  {
