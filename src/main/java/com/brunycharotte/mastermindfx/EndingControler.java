@@ -50,6 +50,7 @@ public class EndingControler {
     public void setRobotWinner() {
         winnerLabel.setText("Le robot a gagné... Dommage!");
     }
+    public void setEgalite() {winnerLabel.setText("Egalité!");}
 
 
     public void updateScore(int scoreJoueur, int scoreRobot) {
@@ -57,9 +58,10 @@ public class EndingControler {
         this.scoreBot.setText(scoreRobot + "");
         if (scoreJoueur > scoreRobot) {
             setPlayerWinner();
-        } else {
+        } else if (scoreJoueur < scoreRobot) {
             setRobotWinner();
         }
+        else setEgalite();
 
     }
 
