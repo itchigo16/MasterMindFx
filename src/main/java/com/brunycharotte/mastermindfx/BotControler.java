@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 public class BotControler {
 
@@ -191,7 +192,8 @@ public class BotControler {
         HBox firstCode = getCircleHbox();
         for (int i = 0; i < 4; i++) {
             Circle circle = (Circle) firstCode.getChildren().get(i);
-            circle.setFill(ensembleCouleurs.get(0));
+            Random random = new Random();;
+            circle.setFill(ensembleCouleurs.get(random.nextInt(6)));
         }
         System.out.println(activeRow);
         aGagne();
@@ -266,7 +268,8 @@ public class BotControler {
         while ((cod1[index] + 1) > nbCouleurs - 1) { // Permet de passer à l'emplacement suivant si la valeur à cet emplacement est de taille maximale
             index--; // Passage à l'emplacement suivant
             if (index < 0) { // Test si c'est le dernier emplacement
-                return false; // Si c'est le dernier et que la valeur est de taille maximale alors on ne peut pas effectuer l'action
+                Arrays.fill(cod1, 0); // Remplissage du tableau avec des 0
+                return true;
             }
         }
 
@@ -295,6 +298,8 @@ public class BotControler {
 
         return true;
     }
+
+
 
     public boolean passePropSuivante() {
         int nbCoups = (16 - activeRow) / 2;

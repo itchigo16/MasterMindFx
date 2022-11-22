@@ -31,7 +31,7 @@ Pane {
 #historiqueManche .label{
     -fx-text-fill: white;
 }
-#historiqueManche > SplitPane{
+#historiqueManche > GridPane {
     -fx-background-color: transparent;
     -fx-border-color: #222831;
     -fx-border-width: 1;

@@ -9,9 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="FIX :&#10;-si le bot atteint le nombre max d'essais le malus est appliqué&#10;-si on choisit le code 0 0 0 0, le bot update direct&#10;-si on relance une game il n'y a plus d'erreur dans la console">
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="FIX :&#10;-si il y a égalité">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2022_08_38_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2022_08_38__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_13_25_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_13_25__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_15_05_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_15_05__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +76,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -78,6 +90,11 @@
       <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\java\com\brunycharotte\mastermindfx" />
       <recent name="C:\Users\kumai\Desktop\Java\MasterMindFX_git\src\main\resources\com\brunycharotte\mastermindfx" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean javafx:jlink" />
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -167,6 +184,16 @@
       <workItem from="1668357514618" duration="1079000" />
       <workItem from="1668358623414" duration="1473000" />
       <workItem from="1668360289549" duration="3612000" />
+      <workItem from="1668411463719" duration="70000" />
+      <workItem from="1668411550360" duration="2590000" />
+      <workItem from="1668432920305" duration="2693000" />
+      <workItem from="1668439402885" duration="961000" />
+      <workItem from="1668691073729" duration="36000" />
+      <workItem from="1668692422409" duration="651000" />
+      <workItem from="1668693328825" duration="1337000" />
+      <workItem from="1668699113485" duration="152000" />
+      <workItem from="1668755073228" duration="315000" />
+      <workItem from="1669043764057" duration="2189000" />
     </task>
     <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
       <created>1667998158435</created>
@@ -245,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668373162634</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="FIX :&#10;-si il y a égalité">
+      <created>1668374741782</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668374741782</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +319,11 @@
     <MESSAGE value="background en imageView sur tutoView" />
     <MESSAGE value="connerie réparée" />
     <MESSAGE value="FIX :&#10;-si le bot atteint le nombre max d'essais le malus est appliqué&#10;-si on choisit le code 0 0 0 0, le bot update direct&#10;-si on relance une game il n'y a plus d'erreur dans la console" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX :&#10;-si le bot atteint le nombre max d'essais le malus est appliqué&#10;-si on choisit le code 0 0 0 0, le bot update direct&#10;-si on relance une game il n'y a plus d'erreur dans la console" />
+    <MESSAGE value="FIX :&#10;-si il y a égalité" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX :&#10;-si il y a égalité" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

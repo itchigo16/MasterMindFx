@@ -82,10 +82,13 @@ public class ChoisirCodeControler {
         if (checkCode()) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindBot.fxml"));
             root = fxmlLoader.load();
+
             BotControler controler = fxmlLoader.getController();
+
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+
             controler.setEnsembleCouleurs(this.ensembleCouleurs);
             controler.updateScore(scoreJ1_int, scoreRobot);
             controler.setSecretCode(getSecretCodeFromColors());
@@ -93,6 +96,7 @@ public class ChoisirCodeControler {
             controler.setManche(this.manche);
             controler.updateManche(this.historiqueMancheSaver);
             controler.putFirstCode();
+
             stage.show();
         }
 

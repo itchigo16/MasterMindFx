@@ -73,6 +73,7 @@ public class EndingControler {
     HistoriqueMancheSaver historiqueMancheSaver;
 
 
+
     public void updateManche(HistoriqueMancheSaver historiqueMancheSaver) {
         this.historiqueMancheSaver = historiqueMancheSaver;
         for (int i = 0; i < 10; i++) {

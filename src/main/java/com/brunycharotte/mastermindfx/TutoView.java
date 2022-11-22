@@ -34,7 +34,10 @@ public class TutoView {
     Image[] images = {humainDecodeur, choisisCode, robotDecodeur, finManche};
 
     public void onClickSuivant(ActionEvent event) throws IOException  {
-        if (indexImage == 2) suivant.setText("JOUER !");
+        if (indexImage == 2) {
+            suivant.setText("JOUER !");
+            suivant.setId("changerButton");
+        }
         if (indexImage != 3) {
             indexImage++;
             displayedImage.setImage(images[indexImage]);
@@ -54,22 +57,13 @@ public class TutoView {
     }
 
     public void onClickPrecedent() {
-        if (indexImage == 3) suivant.setText("Suivant");
+        if (indexImage == 3) {
+            suivant.setText("Suivant");
+            suivant.setId("");
+        }
         if (indexImage != 0) {
             indexImage--;
             displayedImage.setImage(images[indexImage]);
         }
     }
-
-    public void onPlay(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MasterMindPlayer.fxml"));
-        root = fxmlLoader.load();
-        MainControler controler = fxmlLoader.getController();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        controler.updateScore(0, 0);
-        stage.show();
-    }
-
 }
