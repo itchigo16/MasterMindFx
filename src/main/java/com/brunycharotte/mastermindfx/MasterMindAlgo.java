@@ -17,10 +17,6 @@ public class MasterMindAlgo {
      * Par exemple, si cod1 = (1,0,2,0) et cod2 = (0,1,0,0) la fonction retourne 1 (le "0" à l'indice 3)
      */
     public static int nbBienPlaces(int[] cod1, int[] cod2) {
-        if (cod1.length != cod2.length) {
-            System.out.println("Longueur des codes différente !");
-            return -1;
-        }
 
         int longueur = cod1.length;
         int nbBienPlaces = 0;
@@ -53,13 +49,6 @@ public class MasterMindAlgo {
     public static int[] tabFrequence(int[] cod) {
         int[] tab = new int[6];
 
-        for (int j : cod) {
-            if (j < 0 || j >= 6) {
-                System.out.println("Les éléments du code ne sont pas valides !");
-                return tab;
-            }
-        }
-
         for (int i = 0; i < 6; i++) {
             int occurence = 0;
             for (int elt : cod) { // Parcourt les éléments du tableau cod
@@ -81,24 +70,6 @@ public class MasterMindAlgo {
      * Par exemple, si cod1 = (1,0,2,0) et cod2 = (0,1,0,0) la fonction retourne 3 (2 "0" et 1 "1")
      */
     public static int nbCommuns(int[] cod1, int[] cod2) {
-        if (cod1.length != cod2.length) {
-            System.out.println("Longueur des codes différente !");
-            return -1;
-        }
-
-        int longueur = cod1.length;
-
-        for (int i = 0; i < longueur; i++) {
-            if (cod1[i] < 0 || cod1[i] >= 6) {
-                System.out.println("Les éléments du premier code ne sont pas valides !");
-                return -1;
-            }
-            if (cod2[i] < 0 || cod2[i] >= 6) {
-                System.out.println("Les éléments du deuxième code ne sont pas valides !");
-                return -1;
-            }
-        }
-
         int nbCommuns = 0;
 
         int[] tabFrequenceCod1 = tabFrequence(cod1);
@@ -123,24 +94,6 @@ public class MasterMindAlgo {
      */
     public static int[] nbBienMalPlaces(int[] cod1, int[] cod2) {
         int[] tab = new int[2];
-
-        if (cod1.length != cod2.length) {
-            System.out.println("Longueur des codes différente !");
-            return tab;
-        }
-
-        int longueur = cod1.length;
-
-        for (int i = 0; i < longueur; i++) {
-            if (cod1[i] < 0 || cod1[i] >= 6) {
-                System.out.println("Les éléments du premier code ne sont pas valides !");
-                return tab;
-            }
-            if (cod2[i] < 0 || cod2[i] >= 6) {
-                System.out.println("Les éléments du deuxième code ne sont pas valides !");
-                return tab;
-            }
-        }
 
         tab[0] = nbBienPlaces(cod1, cod2); // Attribue le nombre d'elt bien placés au premier indice
         tab[1] = Math.abs(tab[0] - nbCommuns(cod1, cod2)); // Attribue le nombre d'elt mal placés au second indice

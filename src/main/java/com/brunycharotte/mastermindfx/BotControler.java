@@ -195,7 +195,6 @@ public class BotControler {
             Random random = new Random();;
             circle.setFill(ensembleCouleurs.get(random.nextInt(6)));
         }
-        System.out.println(activeRow);
         aGagne();
     }
 
@@ -218,9 +217,7 @@ public class BotControler {
             return resultat;
         }
         resultat[0] = (int) bienPlaceSlider.getValue();
-        System.out.println(resultat[0]);
         resultat[1] = (int) malPlaceSlider.getValue();
-        System.out.println(resultat[1]);
         return resultat;
     }
 
@@ -254,7 +251,7 @@ public class BotControler {
                     cod[(16 - activeRow) / 2] = intCode;
 
                     updateNewCode();
-                } else System.out.println("not good");
+                }
 
             }
 
@@ -324,7 +321,6 @@ public class BotControler {
             validerButton.setVisible(false);
             // Malus : nbMalPlaces + 2 × (lgCode − (nbBienPlaces + nbMalPlaces))
             int bienPlace = rep[8 - activeRow/2][0];
-            System.out.println(bienPlace);
             int malPlace = rep[8 - activeRow/2][1];
             int malus = malPlace + 2 * (4 - (bienPlace + malPlace));
             ptsGagne = 8 - activeRow / 2 + 1 + malus;
@@ -343,7 +339,6 @@ public class BotControler {
 
     private void aGagne() {
         if (Arrays.equals(getSecretCodeFromColors(), secretCode)) {
-            System.out.println("GG");
             winner = "JOUEUR";
             if (manche == 10) {
                 changerButton.setText("FIN !");
@@ -372,7 +367,6 @@ public class BotControler {
                 }
             }
         }
-        System.out.println(Arrays.toString(secretCode));
         return secretCode;
 
     }

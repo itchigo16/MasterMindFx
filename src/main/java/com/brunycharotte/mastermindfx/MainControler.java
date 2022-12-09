@@ -99,7 +99,7 @@ public class MainControler {
 
     public void setManche(int manche) {
         this.manche = manche;
-        labelManche.setText("manche numéro " + this.manche);
+        labelManche.setText("Manche numéro " + this.manche);
 
     }
 
@@ -222,7 +222,6 @@ public class MainControler {
 
     public void envoyerCode() {
         if (canClick) {
-            System.out.println(Arrays.toString(secretCode));
             setEnsembleCouleurs();
             if (checkEmptyCase() == -1) {
                 String[] code = new String[4];
@@ -238,12 +237,10 @@ public class MainControler {
                     }
 
                 }
-                System.out.println(Arrays.toString(intCode));
 
 
                 placeBienMalPlace(MasterMindAlgo.nbBienMalPlaces(secretCode, intCode));
                 if (Arrays.equals(secretCode, intCode)) { // WIN
-                    System.out.println("gg");
                     canClick = false;
                     validerButton.setVisible(false);
                     changerButton.setVisible(true);
@@ -270,7 +267,6 @@ public class MainControler {
 
                     changerButton.setVisible(true);
                     canClick = false;
-                    System.out.println("BAD");
                 }
             }
         }

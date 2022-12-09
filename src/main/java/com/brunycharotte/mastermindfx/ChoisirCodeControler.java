@@ -135,7 +135,6 @@ public class ChoisirCodeControler {
                 }
             }
         }
-        System.out.println(Arrays.toString(secretCode));
         return secretCode;
 
     }
@@ -155,7 +154,6 @@ public class ChoisirCodeControler {
     public void removeCircle(MouseEvent event) {
         String id = event.getPickResult().getIntersectedNode().getId();
         String nb = id.charAt(id.length() - 1) + "";
-        System.out.println(nb);
         ((Circle) rowCirclePick.getChildren().get(Integer.parseInt(nb) - 1)).setFill(Paint.valueOf("0xffffffff"));
     }
 

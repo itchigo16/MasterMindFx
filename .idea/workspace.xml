@@ -9,21 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="FIX :&#10;-si il y a égalité">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2022_08_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2022_08_38__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_13_25_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_13_25__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_15_05_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_11_2022_15_05__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="599b71df-3436-425a-835f-e62fa2f065ad" name="Changes" comment="bot joue mieux">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/BotControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/ChoisirCodeControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/EndingControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/TutoView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/brunycharotte/mastermindfx/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MainControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MasterMindAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brunycharotte/mastermindfx/MasterMindAlgo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +67,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -194,6 +186,23 @@
       <workItem from="1668699113485" duration="152000" />
       <workItem from="1668755073228" duration="315000" />
       <workItem from="1669043764057" duration="2189000" />
+      <workItem from="1669104696907" duration="83000" />
+      <workItem from="1669128280180" duration="253000" />
+      <workItem from="1669296205648" duration="128000" />
+      <workItem from="1669297654841" duration="704000" />
+      <workItem from="1669498426932" duration="417000" />
+      <workItem from="1669499390925" duration="871000" />
+      <workItem from="1669503547170" duration="206000" />
+      <workItem from="1669727247301" duration="14000" />
+      <workItem from="1669891595775" duration="107000" />
+      <workItem from="1669891883799" duration="454000" />
+      <workItem from="1670230150513" duration="897000" />
+      <workItem from="1670247040343" duration="196000" />
+      <workItem from="1670317748620" duration="339000" />
+      <workItem from="1670497322584" duration="490000" />
+      <workItem from="1670497859419" duration="1037000" />
+      <workItem from="1670509059058" duration="72000" />
+      <workItem from="1670575497909" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="le boutton quitter sert vraiment mtn">
       <created>1667998158435</created>
@@ -279,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668374741782</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="bot joue mieux">
+      <created>1669104744922</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669104744922</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +336,8 @@
     <MESSAGE value="connerie réparée" />
     <MESSAGE value="FIX :&#10;-si le bot atteint le nombre max d'essais le malus est appliqué&#10;-si on choisit le code 0 0 0 0, le bot update direct&#10;-si on relance une game il n'y a plus d'erreur dans la console" />
     <MESSAGE value="FIX :&#10;-si il y a égalité" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX :&#10;-si il y a égalité" />
+    <MESSAGE value="bot joue mieux" />
+    <option name="LAST_COMMIT_MESSAGE" value="bot joue mieux" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
